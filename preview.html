@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Feedback Form Preview</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    background-color: rgba(255, 255, 255, 0.521);
+    color: #000000;
+  }
+
+  .container {
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #accaae;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+  }
+
+  h2 {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  .preview-content {
+    text-align: left;
+    margin-top: 20px;
+  }
+
+  .preview-content p {
+    margin-bottom: 10px;
+  }
+
+  button {
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+
+  button:hover {
+    background-color: #0056b3;
+  }
+</style>
+</head>
+<body>
+  <div class="container">
+    <h2>Feedback Form Preview</h2>
+    <div class="preview-content" id="previewContent">
+      <!-- Form data will be filled here -->
+    </div>
+    <button onclick="goBack()">Go Back</button>
+  </div>
+  <script>
+    // Function to fetch form data from localStorage
+    // function getFormData() {
+    //   const Name = sessionStorage.getItem('Name');
+    //   const Email = sessionStorage.getItem('Email');
+    //   const Massage = sessionStorage.getItem('Message');
+    //   if (formDataString) {
+    //     return JSON.parse(formDataString);
+    //   } else {
+    //     return null;
+    //   }
+
+    // }
+
+    // Display form data in the preview
+    // const formData = getFormData();
+    const Name = sessionStorage.getItem('Name');
+    const Email = sessionStorage.getItem('Email');
+    const Massage = sessionStorage.getItem('Message');
+    // if (formData) {
+      const previewContent = document.getElementById('previewContent');
+      previewContent.innerHTML = `
+        <p><strong>Name:</strong> ${Name}</p>
+        <p><strong>Email:</strong> ${Email}</p>
+        <p><strong>Was this your first visit?:</strong> ${Email}</p>
+        <p><strong>Was this website informative and easy to navigate?:</strong> ${Email}</p>
+        <p><strong>Message:</strong> ${Massage}</p>
+        <p><strong>How satisfied are you with our services?:</strong> ${Name}</p>
+        <p><strong>Would you recommend our services?:</strong> ${Name}</p>
+      `;
+    // }
+
+    // Function to navigate back to the form page
+    function goBack() {
+      window.history.back();
+    }
+  </script>
+</body>
+</html>
