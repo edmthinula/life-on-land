@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Team</title>
+    <link rel="stylesheet" href="style_navbar.css">
+    <style>
+        
+        body {
+            font-family: "Open Sans", sans-serif;
+            margin: 0;
+            padding: 0;
+            height: 120vh; /* Set the height of the body to full viewport height */
+            background-image: 
+                linear-gradient(to bottom, rgba(255, 255, 255, 0.157),  rgba(0, 0, 0, 0),rgb(255, 255, 255)), /* Top gradient */
+                url(Background6.jpg); /* Second image */
+            background-repeat: no-repeat; /* Prevent background images from repeating */
+            background-position: center top, center bottom; /* Position images */
+            background-size: cover; /* Ensure the background images cover the entire body */
+            backdrop-filter: blur(4px);
+            
+        }
+        p{
+            line-height: 1.4;
+        }
+
+        h1 {
+            text-align: center;
+            padding-top: -25px;
+        }
+        h2{
+            color: rgb(150, 182, 182);
+            font-weight: bold;
+        }
+    
+        .ProfileContainer {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 2%;
+            position: relative;
+        }
+
+        .ProfilePictures {
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            display: none;
+        }
+
+        .ProfileContainer:hover .ProfilePictures {
+            display: block;
+        }
+
+        .TeamPic {
+            text-align: center;
+            margin: 0 10px;
+            position: relative;
+            width: 250px;
+            height: 250px;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        img {
+            max-width: 100%;
+            max-height: 100%;
+            display: inline-flex;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+        .TeamMember {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) scale(0.8); /* Adjust scale as needed */
+            width: 100%; /* Set to 100% to cover the entire container */
+            height: 100%; /* Set to 100% to cover the entire container */
+            transition: transform 0.3s ease-in-out; /* Add transition */
+            
+        }
+
+
+        .TeamBackground {
+            width: 100%;
+            height: 100%;
+            transition: transform 0.5s ease-in-out;
+            /* filter: blur(2px); */
+        }
+
+        .Details {
+            position: relative;
+            color: aliceblue;
+            bottom: -100px; /* Adjust as needed */
+            left: 50%;
+            transform: translateX(-50%);
+            text-align: center;
+            padding: 10px;
+            display: none;
+            width : 105%;
+            height: 400px;
+            z-index: 1; /* Ensure it's above other elements */
+            
+        }
+        .DetailsBox {
+            position: relative;
+            bottom: 200px; /* Adjust as needed */
+            left: 50%;
+            transform: translateX(-50%);
+            text-align: center;
+            padding: 10px;
+            display: none;
+            width : 120%;
+            background-color: rgba(0, 0, 0, 0.502); /* Adjust opacity as needed */
+            height: 320px;
+            border-radius: 10%;
+            z-index: -1; /* Ensure it's above other elements */
+            /* filter:blur(3px) */
+
+        
+        }
+
+        .TeamPic:hover .TeamBackground {
+            transform: scale(1.1) ; /* Scale the background image on hover */
+            
+            /* filter: blur(3px);  */
+
+        }
+
+    
+    
+        .TeamPic:hover .TeamMember {
+            transform: translate(-50%, -50%) scale(1); /* Scale and center the member image on hover */
+        }
+
+        .TeamPic:hover .Details {
+            display: block;
+        }
+        .TeamPic:hover .DetailsBox {
+            display: block;
+
+        }
+        .Buttons img{
+            position: relative;
+            width: 40px;
+            height: auto;
+            filter: drop-shadow(0px 0px 5px rgba(0, 0, 0, 0.5));
+            
+        }
+        a:hover img {
+            opacity: 0.5;
+        }
+        
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+          <h1>Life on Land</h1>
+    
+          <div class="menu">
+            <a href="home.html">Home</a>
+            <a href="#">Shop</a>
+            <a href="#">Feedback</a>
+            <a href="Profile.html">Profile</a>
+            <a href="#">Site Map</a>
+            <a href="#">Gallery</a>
+          </div>
+    
+          <button class="hamburger">
+            <span class="material-icons">menu</span>
+          </button>
+        </nav>
+    
+        <div class="mobile-menu">
+          <a href="home.html">Home</a>
+          <a href="#">Shop</a>
+          <a href="#">Feedback</a>
+          <a href="#">Profile</a>
+          <a href="#">Site Map</a>
+          <a href="#">Gallery</a>
+        </div>
+      </header>
+    
+    <h1>Student Details</h1>
+    <div class="ProfileContainer">
+        <div class="TeamPic">
+            <img class="TeamBackground" src="Rectangle 1.png" alt="User background">
+            <img class="TeamMember" src="ThinulaH.png" alt="Thinula HArischandra">
+            <div class="Details">
+                <br><br><br><br><br><br><br><br>
+                <!-- Details about Thinula HArischandra -->
+                <h2>Thinula<br>Harischandra</h2>
+                <p>UoW Number : W2051872<br>
+                IIT Number : 20231158<br>
+                Role Student 3<br>
+                Design and implemented pages : <br>Team Page | User Details</p><br>
+                <div class="Buttons">
+                    <a href="https://twitter.com/thinula_02"><img class="Buttonsing" src="TwitterX.png" alt="TwitterButton"></a>
+                    <a href="https://www.linkedin.com/in/thinula-harischandra-218208272/"><img class="Buttonsimg" src="LinkedIn.png" alt="TwitterButton"></a>
+                </div><br>
+            </div>
+            <div class="DetailsBox"></div>
+        </div>
+        
+        <div class="TeamPic">
+            <img class="TeamBackground" src="Rectangle 1.png" alt="User background">
+            <img class="TeamMember" src="Thamindu.png" alt="Thinula HArischandra">
+            <div class="Details">
+                <br><br><br><br><br><br><br><br>
+                <!-- Details about Thamidu Miuranda -->
+                <h2>Thamidu<br>Miuranda</h2>
+                <p>UoW Number : W12345678<br>
+                    IIT Number : 20231158<br>
+                    Role Student 1<br>
+                    Design and implemented pages : <br>Splash Screen | Shop</p><br>
+                    <div class="Buttons">
+                        <a href="https://twitter.com/thinula_02"><img class="Buttonsing" src="TwitterX.png" alt="TwitterButton"></a>
+                        <a href="https://www.linkedin.com/in/thinula-harischandra-218208272/"><img class="Buttonsimg" src="LinkedIn.png" alt="TwitterButton"></a>
+                    </div><br>
+            </div>
+            <div class="DetailsBox"></div>
+        
+            </div>
+            <div class="TeamPic">
+                <img class="TeamBackground" src="Rectangle 1.png" alt="User background">
+                <img class="TeamMember" src="ThinulaJ.png" alt="Thinula Jayavihan">
+                <div class="Details">
+                <br><br><br><br><br><br><br><br>
+                <!-- Details about Thinula Jayavihan -->
+                <h2>Thinula<br>Jayavihan</h2>
+                <p>UoW Number : W12345678<br>
+                IIT Number : 20231158<br>
+                Role Student 2<br>
+                Design and implemented pages : <br> Home Page + template + nav<br> Feedback</p>
+                <div class="Buttons">
+                    <a href="https://twitter.com/thinula_02"><img class="Buttonsing" src="TwitterX.png" alt="TwitterButton"></a>
+                    <a href="https://www.linkedin.com/in/thinula-harischandra-218208272/"><img class="Buttonsimg" src="LinkedIn.png" alt="TwitterButton"></a>
+                </div><br>
+            </div>
+            <div class="DetailsBox"></div>
+        </div>
+        <div class="TeamPic">
+            <img class="TeamBackground" src="Rectangle 1.png" alt="User background">
+            <img class="TeamMember" src="Sanidu.png" alt="Sanidu Wickamasinghe">
+            <div class="Details">
+                <br><br><br><br><br><br><br><br>
+                <!-- Details about Sanidu Wickamasinghe -->
+                <h2>Sanidu<br>Wickramasinghe</h2>
+                <p>UoW Number : W12345678<br>
+                IIT Number : 20231158<br>
+                Role Student 4<br>
+                Design and implemented pages :<br>Gallery | Sitemap</p><br>
+                <div class="Buttons">
+                    <a href="https://twitter.com/thinula_02"><img class="Buttonsing" src="TwitterX.png" alt="TwitterButton"></a>
+                    <a href="https://www.linkedin.com/in/thinula-harischandra-218208272/"><img class="Buttonsimg" src="LinkedIn.png" alt="TwitterButton"></a>
+                </div><br>
+            </div>
+            <div class="DetailsBox"></div>
+        </div>
+    </div>   
+    
+</body>
+</html>
+
