@@ -1,0 +1,209 @@
+@import url("https://fonts.googleapis.com/css?family=Lato:400,700");
+
+:root {
+  --primaryColor: #ffb534;
+  --mainWhite: rgb(251, 246, 238);
+  --mainGreen: #65b741;
+  --subGreen: #c1f2b0;
+  --mainSpacing: 0.1rem;
+  --mainTransition: all 0.3s linear;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  color: var(--mainGreen);
+  background: var(--mainWhite);
+  font-family: "Lato", sans-serif;
+}
+/* nav */
+nav {
+  letter-spacing: var(--mainSpacing);
+  font-family: sans-serif;
+
+  position: sticky;
+  top: 0%;
+  z-index: 99;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--mainGreen);
+  color: var(--mainWhite);
+  padding: 1rem 1.5rem;
+  height: 90px;
+}
+
+nav h1 {
+  letter-spacing: 5px;
+  padding: 0.5rem 1rem;
+  padding-right: calc(1rem - 5px);
+  border: 3px solid var(--mainWhite);
+  border-radius: 15px;
+}
+
+nav h1:hover {
+  background-color: var(--mainWhite);
+  color: var(--mainGreen);
+  border-color: var(--subGreen);
+  cursor: pointer;
+  transition: var(--mainTransition);
+}
+
+.menu {
+  display: none;
+  align-items: center;
+  margin: 0 -1rem;
+}
+
+.menu a {
+  font-weight: bold;
+  margin: 0 1rem;
+  padding: 10px;
+  border-radius: 20px;
+  color: var(--mainWhite);
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.menu a:hover {
+  background-color: var(--mainWhite);
+  color: var(--mainGreen);
+  padding: 10px;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: var(--mainTransition);
+}
+
+.hamburger {
+  appearance: none;
+  outline: none;
+  border: none;
+  background: none;
+  cursor: pointer;
+
+  display: block;
+  width: 2rem;
+  height: 2rem;
+}
+
+.hamburger span {
+  color: var(--mainWhite);
+  font-size: 2rem;
+  padding: 5px;
+}
+
+.hamburger span:hover {
+  background-color: var(--mainWhite);
+  color: var(--mainGreen);
+}
+
+.mobile-menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 50%;
+  z-index: 98;
+
+  padding-top: 6rem;
+  opacity: 0;
+  transform: translateY(-100%);
+  background-color: var(--mainGreen);
+  color: var(--mainWhite);
+  transition: 0.3s;
+}
+
+.mobile-menu.is-open {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.mobile-menu a {
+  letter-spacing: var(--mainSpacing);
+  font-weight: bold;
+  display: block;
+  padding: 1rem;
+  color: var(--mainWhite);
+  text-align: center;
+  text-decoration: none;
+  font-size: 1.25rem;
+  transition: 0.3s;
+}
+
+.mobile-menu a:hover {
+  color: var(--mainGreen);
+  background-color: var(--mainWhite);
+  transition: var(--mainTransition);
+}
+
+@media (min-width: 1024px) {
+  .mobile-menu,
+  .hamburger {
+    display: none;
+  }
+
+  .menu {
+    display: flex;
+  }
+}
+@media (max-height: 850px) {
+  .mobile-menu {
+    height: 100%;
+  }
+}
+/* nav end */
+
+.hero {
+  display: flex;
+  position: relative;
+}
+
+.hero-image {
+  width: 100%;
+}
+.hero-overlay {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 100%;
+  height: 50%; /* Ensures the overlay covers the entire image */
+  background: linear-gradient(
+    to top,
+    rgba(251, 246, 238, 1) 2%,
+    rgba(251, 246, 238, 0) 98%
+  ); /* Gradient definition */
+}
+
+/* hero */
+.cart {
+  position: absolute;
+  right: 0;
+  margin-right: 15px;
+  margin-top: 20px;
+  display: flex;
+  background-color: transparent;
+  width: 40px;
+  height: 40px;
+  border-radius: 25%;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+}
+
+.cart-icon {
+  color: var(--mainWhite);
+  /* font-weight: bold; */
+  font-size: 32px;
+  border-radius: 10px;
+  padding: 5px;
+}
+
+.cart-icon:hover {
+  color: var(--mainWhite);
+  background-color: var(--mainGreen);
+  transition: var(--mainTransition);
+}
+
+/* hero ends */
