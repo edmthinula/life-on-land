@@ -36,6 +36,9 @@
             background-color: #f0f0f0;
             border-radius: 9px;
             margin-bottom: 20px;
+            width:500px;
+            margin-left: auto;
+            margin-right: auto;
         }
 
         .progress {
@@ -205,6 +208,7 @@
                 // if (isSkippable) {
                 //     buttonHTML += `<button class="Buttons" id="skipButton" onclick="skipQuestion()">Skip</button>`; // Add skip button if question is skippable
                 // }
+                
                 promptElement.innerHTML = buttonHTML;
                 promptContainer.appendChild(promptElement);
                 displayProfilePart(currentPart);
@@ -295,18 +299,18 @@
             let profilePart = '';
             let prompts;
             if (part === 1) {
-                profilePart = '<h4>STEP 1 Personal Details   | Question </h4>';
+                profilePart = '<h4>STEP 1 Personal Details   | Question ';
                 prompts = promptsPart1;
             } else if (part === 2) {
-                profilePart = '<h4>STEP 2 Volunteering Tasks | Question </h4>';
+                profilePart = '<h4>STEP 2 Volunteering Tasks | Question ';
                 prompts = promptsPart2;
             } else if (part === 3) {
-                profilePart = '<h4>STEP 3 Qualifications     | Question </h4>';
+                profilePart = '<h4>STEP 3 Qualifications     | Question ';
                 prompts = promptsPart3;
             } else if (part === 4) {
-                profilePart = '<h4>STEP 4 Contact Details    | Question </h4>';
+                profilePart = '<h4>STEP 4 Contact Details    | Question ';
                 prompts = promptsPart4;
-            }
+            }profilePart += (currentStep+1) +'/'+prompts.length+'</h4>'
 
             for (let i = 0; i < prompts.length; i++) {
                 const input = prompts[i].answer || ''; // If input for this step doesn't exist, use an empty string
