@@ -33,6 +33,7 @@
         }
 
         .progress-bar {
+            position: relative;
             background-color: #f0f0f0;
             border-radius: 9px;
             margin-bottom: 20px;
@@ -46,6 +47,7 @@
             height: 20px;
             border-radius: 9px;
             width: 0;
+            animation: progressAnimation 1s ease forwards;
         }
 
         .prompt {
@@ -53,7 +55,7 @@
         }
 
         #profile-output {
-            margin-top: 20px;
+            
         }
 
         .profile-item {
@@ -91,6 +93,7 @@
 
         }
         .Buttons{
+            margin-left: 5px;
             padding-left: 10px;
             padding-right: 10px;
             padding-top: 5px;
@@ -98,12 +101,26 @@
             border-radius: 10px;
             background: white;
             filter: drop-shadow(0 4px 1px rgba(0, 0, 0, 0.111));
-            border-width: 0cap;
+            border-width: 0;
+            transition: transform 0.3s ease-in-out;
             
         }
-        #backButton{
-            margin-left: 78%;
+        .Buttons:hover {
+            transform: scale(1.1);
         }
+        
+        #backButton{
+            margin-left: 75%;
+        }
+        #question-part-details{
+            padding-top: 1px;
+            padding-bottom: 1px;
+            background-color: rgba(255, 255, 255, 0.206);
+            padding-left:5%;
+            border-radius: 10px;
+            margin: 10px;
+        }
+        
         
     </style>
 </head>
@@ -137,15 +154,20 @@
       </header>
     <div class="profile-container">
         <h1>User Profile</h1>
+        <div id="question-part-details">
+            <!--Part detail will be added here-->>
+        </div>
         <div id="prompt-container">
             <!-- Prompts will be dynamically added here -->
+        </div>
+        <div id="confirm-container" style="display: none;">
+            <button class="Buttons" onclick="confirmPart()">Confirm</button>
         </div>
         <div class="Outputs">
             <div id="profile-output">
                 <!-- User profile output will be dynamically updated here -->
             </div>
         </div>
-        
         
         <div class="progress-bar">
             <div class="progress" id="progress"></div>
@@ -155,68 +177,94 @@
     <script>
         // Sample prompts
         const promptsPart1 = [
-            { prompt: "Enter your name", display: "Name", answer: "" , skippable:false},
-            { prompt: "Enter your surname", display: "Surname", answer: "" , skippable:true},
-            { prompt: "Enter your gender", display: "Gender", answer: "" ,skippable:true},
-            { prompt: "Enter your age", display: "Age", answer: "" ,skippable:true},
-            { prompt: "Do you agree with our privacy terms", display: "Agree with privacy terms", answer: "" ,skippable:false}
+            { prompt: "Enter your name", display: "Name", answer: "" , skippable:false,type:"Text"},
+            { prompt: "Enter your surname", display: "Surname", answer: "" , skippable:true,type:"Text"},
+            { prompt: "Enter your gender", display: "Gender", answer: "" ,skippable:true,type:"Option"},
+            { prompt: "Enter your age", display: "Age", answer: "" ,skippable:true,type:"Date"},
+            { prompt: "Do you agree with our privacy terms", display: "Agree with privacy terms", answer: "" ,skippable:false,type:"Radio"}
         ];
         const promptsPart2 = [
-            { prompt: "Areas of Interest", display: "Interests", answer: "" ,skippable:true},
-            { prompt: "Preferred Tasks", display: "Tasks", answer: "",skippable:true },
-            { prompt: "Location Preference", display: "Location", answer: "" ,skippable:true},
-            { prompt: "Availability", display: "Availability", answer: "" ,skippable:true}
+            { prompt: "Areas of Interest", display: "Interests", answer: "" ,skippable:true,type:"Text"},
+            { prompt: "Preferred Tasks", display: "Tasks", answer: "",skippable:true ,type:"Text"},
+            { prompt: "Location Preference", display: "Location", answer: "" ,skippable:true,type:"Text"},
+            { prompt: "Availability", display: "Availability", answer: "" ,skippable:true,type:"Text"}
         ]
         const promptsPart3 = [
-            { prompt: "Main Area of Study", display: "Area of Study", answer: "", skippable:true },
-            { prompt: "Skills and Experience", display: "Skills", answer: "" ,skippable:true},
-            { prompt: "Languages Spoken", display: "Languages", answer: "" ,skippable:true}
+            { prompt: "Main Area of Study", display: "Area of Study", answer: "", skippable:true ,type:"Text"},
+            { prompt: "Skills and Experience", display: "Skills", answer: "" ,skippable:true,type:"Text"},
+            { prompt: "Languages Spoken", display: "Languages", answer: "" ,skippable:true,type:"Text"}
         ]
         const promptsPart4 = [
-            { prompt: "Enter Your Email Address", display: "Email", answer: "" ,skippable:false},
-            { prompt: "Enter Your Phone Number", display: "Phone No. ", answer: "" ,skippable:false},
+            { prompt: "Enter Your Email Address", display: "Email", answer: "" ,skippable:false,type:"Text"},
+            { prompt: "Enter Your Phone Number", display: "Phone No. ", answer: "" ,skippable:false,type:"Text"},
         ]
     
         const promptContainer = document.getElementById('prompt-container');
         const progress = document.getElementById('progress');
         const profileOutput = document.getElementById('profile-output');
+        const partDetail = document.getElementById('question-part-details')
     
         let currentStep = 0;
         let currentPart = 1;
+        let step = 0;
+        const stepTot = 14;
     
         // Function to display prompts
         function displayPrompt() {
+            promptContainer.style.display = 'block';
+            partDetail.style.display = 'block';
             let prompts = currentPart === 1 ? promptsPart1 : 
                         currentPart === 2 ? promptsPart2 : 
                         currentPart === 3 ? promptsPart3 : 
                         promptsPart4;
-
+            
             if (currentStep < prompts.length) {
                 const prompt = prompts[currentStep].prompt;
                 const isSkippable = prompts[currentStep].skippable; // Check for skippable property
 
                 const promptElement = document.createElement('div');
                 promptElement.classList.add('prompt');
+                let promptGetHTML = ''; // Define promptGetHTML outside the conditional block
+                if(prompts[currentStep].type === "Text") {
+                    promptGetHTML = `
+                        <label class="PromptLabel">${prompts[currentStep].prompt}</label><br>
+                        <input type="text" class="PromptBar" id="input-${currentStep}" data-step="${currentStep}">
+                        <br>
+                    `;
+                }else if(prompts[currentStep].type ==="Radio"){
+                    promptGetHTML = `
+                        <label class="PromptLabel">${prompts[currentStep].prompt}</label><br>
+                        <input type="radio" class="PromptBar" id="input-${currentStep}" name="input-${currentStep}" value="Yes">
+                        <label for="input-${currentStep}">Agree</label><br>
+                    `;
+                }else if (prompts[currentStep].type==="Option"){
+                    promptGetHTML = `
+                        <label class="PromptLabel">${prompts[currentStep].prompt}</label><br>
+                        <select class="PromptBar" id="input-${currentStep}" name="input-${currentStep}">
+                            <option value="Male">Male</option>
+                            <option value="Female">Female</option>
+                        </select><br>
+                    `;
+                }else if(prompts[currentStep].type==="Date"){
+                    promptGetHTML = `
+                        <label class="PromptLabel">${prompts[currentStep].prompt}</label><br>
+                        <input type="date" class="PromptBar" id="input-${currentStep}" name="input-${currentStep}"><br>
+                    `;
+                }
                 let buttonHTML = `
-                    <label class ="PromptLabel">${prompts[currentStep].prompt}</label><br>
-                    <input type="text" class="PromptBar" id="input-${currentStep}" data-step="${currentStep}">
-                    <br>
                     <button class="Buttons" onclick="backQuestion()" id="backButton">Back</button>
                     <button class="Buttons" onclick="nextStep()" id="nextButton">Next</button>
                     <button class="Buttons" id="skipButton" onclick="skipQuestion()">Skip</button>
                 `;
-                // if (isSkippable) {
-                //     buttonHTML += `<button class="Buttons" id="skipButton" onclick="skipQuestion()">Skip</button>`; // Add skip button if question is skippable
-                // }
                 
-                promptElement.innerHTML = buttonHTML;
+                promptElement.innerHTML = promptGetHTML + buttonHTML;
                 promptContainer.appendChild(promptElement);
                 displayProfilePart(currentPart);
 
                 // Check if the field is unskippable and enable/disable the next button accordingly
                 const nextButton = document.getElementById('nextButton');
                 const inputField = document.getElementById(`input-${currentStep}`);
-                if (!isSkippable && inputField.value === '') {
+                if (!isSkippable && inputField.value === '' ) {
                     nextButton.disabled = true;
                     skipButton.disabled = true;
                     inputField.addEventListener('input', function() {
@@ -226,7 +274,6 @@
                 }
             } else {
                 promptContainer.innerHTML = '';
-                progress.style.width = '100%';
                 currentPart++;
                 currentStep = 0;
                 if (currentPart <= 4) {
@@ -235,7 +282,23 @@
                     displayProfile(); // All parts completed, display profile
                 }
             }
+            
+
         }
+        function confirmPart() {
+            currentStep = 0;
+            promptContainer.innerHTML = ''; // Clear the prompt container
+
+            // Proceed to the next part
+            currentPart++;
+            if (currentPart <= 4) {
+                displayPrompt();
+            } else {
+                document.getElementById('confirm-container').style.display = 'none';
+                displayProfile(); // All parts completed, display profile
+            }
+        }
+
     
         // Function to move to the next step
         function nextStep() {
@@ -246,11 +309,30 @@
                 promptsPart4;
             prompts[currentStep].answer = input;
             currentStep++;
-            const percentage = (currentStep / prompts.length) * 100;
+            step++;
+            const percentage = (step / stepTot) * 100;
             progress.style.width = `${percentage}%`;
              // Update the profile part
             promptContainer.innerHTML = ''; // Clear the prompt container
-            displayPrompt(); // Display next prompt or proceed to the next part
+            if(currentStep<prompts.length){
+                displayPrompt(); // Display next prompt or proceed to the next part
+            }
+            if (prompts[currentStep] && prompts[currentStep].answer !== "") {
+                // Set the value of the next input field to the answer of the current step
+                const nxtAnswer = prompts[currentStep].answer;
+                const inputField = document.getElementById(`input-${currentStep}`);
+                inputField.value = nxtAnswer;
+            }
+            
+            if (currentStep === prompts.length) {
+                displayProfilePart(currentPart)
+                document.getElementById('confirm-container').style.display = 'block';
+                promptContainer.style.display = 'none';
+                partDetail.style.display = 'none';
+            } else {
+                document.getElementById('confirm-container').style.display = 'none';
+            }
+            
         }
 
         function skipQuestion() {
@@ -259,68 +341,144 @@
                         currentPart === 2 ? promptsPart2 :
                         currentPart === 3 ? promptsPart3 :
                         promptsPart4;
-            const percentage = (currentStep / prompts.length) * 100;
+            step++
+            const percentage = (step / stepTot) * 100;
             progress.style.width = `${percentage}%`;
             promptContainer.innerHTML = ''; // Clear the prompt container
-            displayPrompt(); // Display next prompt
+            if(currentStep<prompts.length){
+                displayPrompt(); // Display next prompt or proceed to the next part
+            }
+            if (currentStep === prompts.length) {
+                document.getElementById('confirm-container').style.display = 'block';
+            } else {
+                document.getElementById('confirm-container').style.display = 'none';
+                promptContainer.style.display = 'none';
+            }
+            if (currentStep === prompts.length) {
+                displayProfilePart(currentPart);
+                document.getElementById('confirm-container').style.display = 'block';
+                promptContainer.style.display = 'none';
+                partDetail.style.display = 'none';
+            } else {
+                document.getElementById('confirm-container').style.display = 'none';
+                
+
+            }
         }
         function backQuestion() {
-            currentStep = currentStep-1;
-            let prompts = currentPart === 1 ? promptsPart1 :
-                        currentPart === 2 ? promptsPart2 :
-                        currentPart === 3 ? promptsPart3 :
-                        promptsPart4;
-            const percentage = (currentStep / prompts.length) * 100;
-            progress.style.width = `${percentage}%`;
-            promptContainer.innerHTML = ''; // Clear the prompt container
-            displayPrompt(); // Display next prompt
+            if(step>0){
+                currentStep = currentStep - 1;
+                step = step - 1;
+                let prompts = currentPart === 1 ? promptsPart1 :
+                    currentPart === 2 ? promptsPart2 :
+                    currentPart === 3 ? promptsPart3 :
+                    promptsPart4;
+                const percentage = (step / stepTot) * 100;
+                progress.style.width = `${percentage}%`;
+                promptContainer.innerHTML = ''; // Clear the prompt container
+                displayPrompt(); // Display previous prompt
+                // Fetch the previous answer and populate the input field
+                const prevAnswer = prompts[currentStep].answer;
+                const inputField = document.getElementById(`input-${currentStep}`);
+                inputField.value = prevAnswer;
+            }  
         }
 
         // Function to display user profile
         function displayProfile() {
-            profileOutput.innerHTML = '<h2>User Profile:</h2>';
+            profileOutput.innerHTML = '<h2>Profile</h2>';
+            let profileContent = ''; // Accumulator for profile content
+
             for (let part = 1; part <= 4; part++) {
-                let prompts = part === 1 ? promptsPart1 :
-                    part === 2 ? promptsPart2 :
-                    part === 3 ? promptsPart3 :
-                    promptsPart4;
+                let prompts;
+                if (part === 1){
+                    prompts = promptsPart1;
+                    profileContent += `
+                        <div class="profile-topic">
+                            <br>
+                            <strong><h3>Personal Details</h3></strong><hr>
+                        </div>
+                    `;
+                } else if (part === 2){
+                    prompts = promptsPart2;
+                    profileContent += `
+                        <div class="profile-topic"><br>
+                            <strong><h3>Volunteering Tasks</h3></strong><hr>
+                        </div>
+                    `;
+                } else if (part === 3){
+                    prompts = promptsPart3;
+                    profileContent += `
+                        <div class="profile-topic"><br>
+                            <strong><h3>Qualifications</h3></strong><hr>
+                        </div>
+                    `;
+                } else if (part === 4){
+                    prompts = promptsPart4;
+                    profileContent += `
+                        <div class="profile-topic"><br>
+                            <strong><h3>Contact Details</h3></strong><hr>
+                        </div>
+                    `;
+                }
+
                 for (let i = 0; i < prompts.length; i++) {
                     const input = prompts[i].answer || ''; // If input for this step doesn't exist, use an empty string
-                    profileOutput.innerHTML += `
+                    profileContent += `
                         <div class="profile-item">
                             <strong>${prompts[i].display}:</strong> ${input}
                         </div>
                     `;
                 }
-
             }
+
+            profileOutput.innerHTML += profileContent; // Append accumulated content
+            promptContainer.style.display = 'none';
+            partDetail.style.display = 'none';
         }
+        
         function displayProfilePart(part) {
             let profilePart = '';
             let prompts;
+
+            let partDetailHTML = '';
             if (part === 1) {
-                profilePart = '<h4>STEP 1 Personal Details   | Question ';
+                partDetailHTML = `<h4>STEP 1 Personal Details   | Question ${currentStep + 1}/${promptsPart1.length}</h4>`;
+                profilePart += `<div class="profile-topic">
+                        <strong><h3>Personal Details</h3></strong>
+                        </div>`;
                 prompts = promptsPart1;
             } else if (part === 2) {
-                profilePart = '<h4>STEP 2 Volunteering Tasks | Question ';
+                partDetailHTML = `<h4>STEP 2 Volunteering Tasks | Question ${currentStep + 1}/${promptsPart2.length}</h4>`;
+                profilePart += `<div class="profile-topic">
+                        <strong><h3>Volunteering Tasks</h3></strong>
+                        </div>`;
                 prompts = promptsPart2;
             } else if (part === 3) {
-                profilePart = '<h4>STEP 3 Qualifications     | Question ';
+                partDetailHTML = `<h4>STEP 3 Qualifications     | Question ${currentStep + 1}/${promptsPart3.length}</h4>`;
+                profilePart += `<div class="profile-topic">
+                        <strong><h3>Qualifications</h3></strong>
+                        </div>`;
                 prompts = promptsPart3;
             } else if (part === 4) {
-                profilePart = '<h4>STEP 4 Contact Details    | Question ';
+                partDetailHTML = `<h4>STEP 4 Contact Details    | Question ${currentStep + 1}/${promptsPart4.length}</h4>`;
+                profilePart += `<div class="profile-topic">
+                         <strong><h3>Contact Details</h3></strong>
+                        </div>`;
                 prompts = promptsPart4;
-            }profilePart += (currentStep+1) +'/'+prompts.length+'</h4>'
+            }
+
+            partDetail.innerHTML = partDetailHTML;
 
             for (let i = 0; i < prompts.length; i++) {
                 const input = prompts[i].answer || ''; // If input for this step doesn't exist, use an empty string
-                profilePart += `${prompts[i].display}: ${input}<br>`;
+                profilePart += `<strong>${prompts[i].display}:</strong> ${input}<br>`;
             }
-
-            profileOutput.innerHTML = `${profilePart}<br>`;
+            profileOutput.innerHTML = profilePart;
         }
         // Display initial prompt
         displayPrompt();
+        
     </script>
     
 </body>
