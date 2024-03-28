@@ -1,20 +1,21 @@
 <!DOCTYPE html5>
+
 <head>
   <title>Home</title>
-  <link rel="stylesheet" href="style_navbar.css" type="text/css" />
-  <link
-    href="https://fonts.googleapis.com/css?family=Rammetto One"
-    rel="stylesheet"
-  />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Material+Icons"
-    rel="stylesheet"
-  />
+  <link rel="stylesheet" href="css/style_navbar.css" type="text/css" />
+  <link href="https://fonts.googleapis.com/css?family=Rammetto One"
+    rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Material+Icons"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="css/style_footer.css" type="text/css" />
   <style>
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
+    }
+    body{
+      font-family: sans-serif;
     }
     div.slides {
       width: 100%;
@@ -27,6 +28,7 @@
       z-index: 1;
       align-items: center;
     }
+
     div.middle {
       margin: auto;
       margin-top: -1%;
@@ -37,84 +39,96 @@
       z-index: 1;
       justify-content: space-around;
     }
+
     .card {
       margin-top: 5%;
-  width: 300px;
-  height: 360px;
-  border-radius: 15px;
-  padding: 1.5rem;
-  background: white;
-  position: relative;
-  display: flex;
-  align-items: flex-end;
-  transition: 0.4s ease-out;
-  box-shadow: 0px 7px 10px rgba(0, 0, 0, 0.5);
-}
-.card:hover {
-  transform: translateY(20px);
-}
-.card:hover:before {
-  opacity: 1;
-}
-.card:hover .info {
-  opacity: 1;
-  transform: translateY(0px);
-}
-.card:before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  display: block;
-  width: 100%;
-  height: 100%;
-  border-radius: 15px;
-  background: rgba(0, 0, 0, 0.6);
-  z-index: 2;
-  transition: 0.5s;
-  opacity: 0;
-}
-.card img {
-  width: 100%;
-  height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
-  position: absolute;
-  top: 0;
-  left: 0;
-  border-radius: 15px;
-}
-.card .info {
-  position: relative;
-  z-index: 3;
-  color: white;
-  opacity: 0;
-  transform: translateY(30px);
-  transition: 0.5s;
-}
-.card .info h1 {
-  margin: 0px;
-}
-.card .info p {
-  letter-spacing: 1px;
-  font-size: 15px;
-  margin-top: 8px;
-}
-.card .info button {
-  padding: 0.6rem;
-  outline: none;
-  border: none;
-  border-radius: 3px;
-  background: white;
-  color: black;
-  font-weight: bold;
-  cursor: pointer;
-  transition: 0.4s ease;
-}
-.card .info button:hover {
-  background: dodgerblue;
-  color: white;
-}
+      width: 300px;
+      height: 360px;
+      border-radius: 15px;
+      padding: 1.5rem;
+      background: white;
+      position: relative;
+      display: flex;
+      align-items: flex-end;
+      transition: 0.4s ease-out;
+      box-shadow: 0px 7px 10px rgba(0, 0, 0, 0.5);
+    }
+
+    .card:hover {
+      transform: translateY(20px);
+    }
+
+    .card:hover:before {
+      opacity: 1;
+    }
+
+    .card:hover .info {
+      opacity: 1;
+      transform: translateY(0px);
+    }
+
+    .card:before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      display: block;
+      width: 100%;
+      height: 100%;
+      border-radius: 15px;
+      background: rgba(0, 0, 0, 0.6);
+      z-index: 2;
+      transition: 0.5s;
+      opacity: 0;
+    }
+
+    .card img {
+      width: 100%;
+      height: 100%;
+      -o-object-fit: cover;
+      object-fit: cover;
+      position: absolute;
+      top: 0;
+      left: 0;
+      border-radius: 15px;
+    }
+
+    .card .info {
+      position: relative;
+      z-index: 3;
+      color: white;
+      opacity: 0;
+      transform: translateY(30px);
+      transition: 0.5s;
+    }
+
+    .card .info h1 {
+      margin: 0px;
+    }
+
+    .card .info p {
+      letter-spacing: 1px;
+      font-size: 15px;
+      margin-top: 8px;
+    }
+
+    .card .info button {
+      padding: 0.6rem;
+      outline: none;
+      border: none;
+      border-radius: 3px;
+      background: white;
+      color: black;
+      font-weight: bold;
+      cursor: pointer;
+      transition: 0.4s ease;
+    }
+
+    .card .info button:hover {
+      background: dodgerblue;
+      color: white;
+    }
+
     body {
       background-color: #006a4e;
     }
@@ -122,6 +136,7 @@
     .middle_main {
       position: relative;
     }
+
     .top_middle {
       position: relative;
       background-color: #428832;
@@ -133,123 +148,117 @@
       text-align: center;
       border-radius: 20px;
     }
-    
+
     .middle_with_images {
       /* margin-top: 3%; */
       position: relative;
-      padding-top: 3%;
+      /* padding-top: 3%; */
       width: 100%;
       height: 50%;
       background-image: linear-gradient(rgb(162, 98, 38), rgb(0, 0, 0));
       display: flex;
+      flex-direction: column;
+    }
+    .middle_with_images h1{
+      text-align: center;
+      font-family: cursive;
+      margin-bottom: 0%;
+    }
+    .columns{
+      margin: auto;
+      margin-top: 0%;
+      display: flex;
+      flex-direction: row;
+      height: 70%;
     }
     .images_side {
-      flex: 1;
-      float: left;
+      /* flex: 1; */
+      /* float: left; */
       width: 40%;
-      height: 70%;
-      background-image: url("image1.jpg");
-      margin-left: 10%;
-      margin-top: 4%;
-      border: 1px solid #ddd; /* Add a border to the image */
+      height: 90%;
+      background-image: url(images/image1.jpg);
+      /* margin-left: 10%; */
+      margin: auto;
+      margin-top: 3%;
+      border: 2px solid #078a69;
+      /* Add a border to the image */
       border-radius: 20px;
     }
+
     .text_side {
-      /* display: inline-block;  */
-      flex: 1;
-      vertical-align: top;
-      margin-right: 7;
-      margin-left: 10%;
+      
+      margin: auto;
       margin-top: 4%;
-      margin-right: 2%;
+      color: rgb(0, 255, 64);
+      line-height: 35px;
+      /* margin-right: 2%; */
       width: 40%;
-      height: 70%;
+      height: 90%;
     }
-    .text_side > p {
+
+    .text_side>p {
       font-weight: bold;
       text-align: justify;
     }
+
     .text_background_img {
       position: relative;
       padding-top: 3%;
       width: 100%;
       height: 50%;
-      background-image: url(image2.jpg);
+      background-image: url(images/image2.jpg);
     }
+
     .top-text {
-      color: white; /* Text color */
-      position: absolute; /* Absolute positioning within the overlay */
+      color: white;
+      /* Text color */
+      position: absolute;
+      display: flex;
+      flex-direction: row;
+      /* Absolute positioning within the overlay */
 
       width: 100%;
-      height: 70%;
+      height: 80%;
       background-image: linear-gradient(rgb(0, 0, 0), rgba(255, 255, 255, 0));
       top: 0;
       left: 0;
-      
+
     }
-    .top-text > p {
-      margin-left: 3%;
+
+    .top-text>p {
+      font-family: cursive;
+      margin-left: 4%;
+      font-size: 18px;
       line-height: 2em;
       margin-right: 3%;
+      margin-top: 2%;
+      color: rgb(5, 255, 17);
     }
-    .flip-card {
-      background-color: transparent;
-      height: 80%;
-      width: 20%;
-      margin: auto;
-      border: 1px solid #f1f1f1;
-      perspective: 1000px; /* Remove this if you don't want the 3D effect */
+    .top-text h1{
+      margin-top: 7%;
+      margin-left: 4%;
+      background-color: #ffffff2f;
+      width: fit-content;
+      height: fit-content;
+      border-radius: 10px;
+      color: aquamarine;
     }
-
-    /* This container is needed to position the front and back side */
-    .flip-card-inner {
-      position: relative;
-      width: 100%;
-      height: 100%;
-      text-align: center;
-      transition: transform 0.8s;
-      transform-style: preserve-3d;
-    }
-
-    /* Do an horizontal flip when you move the mouse over the flip box container */
-    .flip-card:hover .flip-card-inner {
-      transform: rotateY(180deg);
-    }
-
-    /* Position the front and back side */
-    .flip-card-front,
-    .flip-card-back {
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      -webkit-backface-visibility: hidden; /* Safari */
-      backface-visibility: hidden;
-    }
-
-    /* Style the front side (fallback if image is missing) */
-    .flip-card-front {
-      background-color: #bbb;
-      color: black;
-    }
-
-    /* Style the back side */
-    .flip-card-back {
-      background-color: dodgerblue;
-      color: white;
-      transform: rotateY(180deg);
+    .top-text hr{
+      margin-left: 3%;
+      margin-top: 3%;
+      height: 48%;
     }
     .top_main {
       height: 700px;
       display: flex;
       padding: 0%;
       background-repeat: no-repeat;
-      background-image: linear-gradient(
-        to right,
-        rgba(145, 255, 0, 0),
-        rgba(28, 143, 6, 0.61)
-      );
+      background-image: linear-gradient(to right,
+          rgba(145, 255, 0, 0),
+          rgba(28, 143, 6, 0.61));
       border-radius: 20px;
     }
+
     .top_main img {
       width: 100%;
       height: 700px;
@@ -260,6 +269,7 @@
       z-index: -1;
       border-radius: 20px;
     }
+
     .top_main .main_text {
       position: absolute;
       z-index: 2;
@@ -273,193 +283,69 @@
       font-weight: bold;
       font-family: "Rammetto One";
     }
-    .slides_img{
+
+    .slides_img {
       width: 100%;
       height: 600px;
       object-fit: cover;
       position: relative;
       margin: 0%;
       padding: 0%;
-      z-index: -1;
+      /* z-index: -1; */
       border-radius: 20px;
     }
+
     .mission_box {
       position: absolute;
       z-index: 2;
       width: 80%;
       height: 80%;
-      
+
       left: 10%;
       top: 10%;
       /* margin-top: 4%; */
       z-index: 2;
       /* background-color: ; */
       border: 1px solid rgba(255, 255, 255, .25);
-  border-radius: 20px;
-  background-color: rgba(255, 255, 255, 0.274);
-  box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.25);
+      border-radius: 20px;
+      background-color: rgba(255, 255, 255, 0.274);
+      box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.25);
 
-  backdrop-filter: blur(15px);
-  /* max-width: 300px; */
-  min-height: 200px;
+      backdrop-filter: blur(15px);
+      /* max-width: 300px; */
+      min-height: 200px;
     }
-    .mission_box h1{
-       margin-top: 2%;
-       margin-bottom: 2%;
-       font-weight: 1000;
-       font-size: xx-large;
-       color:#267f00;
-       
+
+    .mission_box h1 {
+      margin-top: 3%;
+      margin-bottom: 3%;
+      font-weight: 1000;
+      font-size: 40px;
+      color: #267f00;
+
     }
-    .mission_box p{
+
+    .mission_box p {
       margin-left: 4%;
       text-align: justify;
       margin-right: 4%;
-      font-weight: 1000;
-      font-size: x-large;
+      font-weight: 500;
+      font-size: 30px;
       color: #000000;
+      line-height:45px;
     }
-    @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap");
-
-footer {
-  /* margin: 0;
-  padding: 0; */
-  box-sizing: border-box;
-  font-family: "Poppins", sans-serif;
-  display: flex;
-  background: #333;
-  justify-content: flex-end;
-  align-items: flex-end;
-  /* min-height: 100vh; */
-}
-
-
-.footer {
-  position: relative;
-  width: 100%;
-  background: #3586ff;
-  min-height: 100px;
-  padding: 20px 50px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-}
-
-.social-icon,
-.menu {
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 10px 0;
-  flex-wrap: wrap;
-}
-
-.social-icon__item,
-.menu__item {
-  list-style: none;
-}
-
-.social-icon__link {
-  font-size: 2rem;
-  color: #fff;
-  margin: 0 10px;
-  display: inline-block;
-  transition: 0.5s;
-}
-.social-icon__link:hover {
-  transform: translateY(-10px);
-}
-
-.menu__link {
-  font-size: 1.2rem;
-  color: #fff;
-  margin: 0 10px;
-  display: inline-block;
-  transition: 0.5s;
-  text-decoration: none;
-  opacity: 0.75;
-  font-weight: 300;
-}
-
-.menu__link:hover {
-  opacity: 1;
-}
-
-.footer p {
-  color: #fff;
-  margin: 15px 0 10px 0;
-  font-size: 1rem;
-  font-weight: 300;
-}
-
-.wave {
-  position: absolute;
-  top: -100px;
-  left: 0;
-  width: 100%;
-  height: 100px;
-  background: url("https://i.ibb.co/wQZVxxk/wave.png");
-  background-size: 1000px 100px;
-}
-
-.wave#wave1 {
-  z-index: 1000;
-  opacity: 1;
-  bottom: 0;
-  animation: animateWaves 4s linear infinite;
-}
-
-.wave#wave2 {
-  z-index: 999;
-  opacity: 0.5;
-  bottom: 10px;
-  animation: animate 4s linear infinite !important;
-}
-
-.wave#wave3 {
-  z-index: 1000;
-  opacity: 0.2;
-  bottom: 15px;
-  animation: animateWaves 3s linear infinite;
-}
-
-.wave#wave4 {
-  z-index: 999;
-  opacity: 0.7;
-  bottom: 20px;
-  animation: animate 3s linear infinite;
-}
-
-@keyframes animateWaves {
-  0% {
-    background-position-x: 1000px;
-  }
-  100% {
-    background-positon-x: 0px;
-  }
-}
-
-@keyframes animate {
-  0% {
-    background-position-x: -1000px;
-  }
-  100% {
-    background-positon-x: 0px;
-  }
-}
   </style>
 </head>
+
 <body>
   <header>
     <nav>
       <h1>Life on Land</h1>
 
       <div class="menu">
-        <a href="#">Home</a>
+        <a href="home.html">Home</a>
         <a href="#">Shop</a>
-        <a href="#">Feedback</a>
+        <a href="form.html">Feedback</a>
         <a href="#">Profile</a>
         <a href="#">Site Map</a>
         <a href="#">Gallery</a>
@@ -471,9 +357,9 @@ footer {
     </nav>
 
     <div class="mobile-menu">
-      <a href="#">Home</a>
+      <a href="home.html">Home</a>
       <a href="#">Shop</a>
-      <a href="#">Feedback</a>
+      <a href="form.html">Feedback</a>
       <a href="#">Profile</a>
       <a href="#">Site Map</a>
       <a href="#">Gallery</a>
@@ -481,7 +367,7 @@ footer {
   </header>
 
   <div class="top_main">
-    <img src="homeback.png" />
+    <img src="images/homeback.png" />
     <div class="main_text">
       <p>
         Protect, restore and promote sustainable use of terrestrial ecosystems
@@ -489,15 +375,19 @@ footer {
       </p>
     </div>
   </div>
-  
+
   <div class="slides">
-    <img class="slides_img" src="slidesbg.jpg">
-    <div class ="mission_box">
+    <img class="slides_img" src="images/slidesbg.jpg">
+    <div class="mission_box">
       <h1>
-        Our mission 
+        Our mission
       </h1>
       <p>
-        Our mission is to promote awareness and appreciation of forests, emphasizing their crucial role in environmental protection, biodiversity conservation, and sustainable resource management. Through education and advocacy, we aim to inspire actions that foster responsible 
+        Our mission is to promote awareness and appreciation of forests,
+        emphasizing their crucial role in environmental
+        protection, biodiversity conservation, and sustainable resource
+        management. Through education and advocacy, we
+        aim to inspire actions that foster responsible
         forest stewardship for the well-being of current and future generations
       </p>
     </div>
@@ -507,58 +397,79 @@ footer {
       <h1>content pages</h1>
     </div>
     <div class="middle">
-      <div class="card"><img src="card1.jpg"/>
+      <div class="card"><img src="images/card1.jpg" />
         <div class="info">
           <h1>Mountain</h1>
-          <p>Lorem Ipsum is simply dummy text from the printing and typeseting industry</p>
+          <p>Lorem Ipsum is simply dummy text from the printing and typeseting
+            industry</p>
           <button>Read More</button>
         </div>
       </div>
-      <div class="card"><img src="card2.jpg"/>
+      <div class="card"><img src="images/card2.jpg" />
         <div class="info">
           <h1>Road</h1>
-          <p>Lorem Ipsum is simply dummy text from the printing and typeseting industry</p>
+          <p>Lorem Ipsum is simply dummy text from the printing and typeseting
+            industry</p>
           <button>Read More</button>
         </div>
       </div>
-      <div class="card"><img src="card3.jpg"/>
+      <div class="card"><img src="images/card3.jpg" />
         <div class="info">
           <h1>Protester</h1>
-          <p>Lorem Ipsum is simply dummy text from the printing and typeseting industry</p>
+          <p>Lorem Ipsum is simply dummy text from the printing and typeseting
+            industry</p>
           <button>Read More</button>
         </div>
       </div>
-      <div class="card"><img src="card4.jpg"/>
+      <div class="card"><img src="images/card4.jpg" />
         <div class="info">
           <h1>Protester</h1>
-          <p>Lorem Ipsum is simply dummy text from the printing and typeseting industry</p>
+          <p>Lorem Ipsum is simply dummy text from the printing and typeseting
+            industry</p>
           <button>Read More</button>
         </div>
       </div>
-      
+
     </div>
   </div>
   <div class="middle_with_images">
-    <div class="images_side"></div>
-    <div class="text_side">
-      <p>
-        The Sustainable Development Goal 15 of the 2030 Agenda for Sustainable
-        Development is devoted to “protect, restore and promote sustainable use
-        of terrestrial ecosystems, sustainably manage forests, combat
-        desertification, and halt and reverse land degradation and halt
-        biodiversity loss”.
-      </p>
+    <h1>Biodiversity and ecosystems</h1>
+    <div class="columns">
+      <div class="images_side"></div>
+      <div class="text_side">
+        <p>
+          The UN prioritizes protecting ecosystems and
+          halting biodiversity loss through international
+          agreements. This focusses on sustainable forest
+          management, combating desertification, and restoring
+          degraded land. The Convention on Biological
+          Diversity, adopted in 1992, is a key agreement
+          promoting these goals.
+        </p>
+      </div>
     </div>
   </div>
   <div class="text_background_img">
     <div class="top-text">
+      <h1>Forest</h1>
+      <hr>
       <p>
-        Furthermore, the Future We Want reiterated the importanc e of
-        implementing the Strategic Plan for Biodiversity 2011-2020, and
-        achieving the Aichi Biodiversity Targets adopted at the Tenth Conference
-        of the Parties to the Convention. Biodiversity was discussed by the
-        Commission on sustainable Development on several occasions, and was one
-        of the themes of the 2012/2013 two-year cycle.
+        Sustainable Development Goal 15 aims to protect and 
+        promote the sustainable use of terrestrial ecosystems, 
+        including forests, to mitigate natural disasters and 
+        climate change. Forests are crucial for biodiversity, 
+        livelihoods of billions of people, and ecological 
+        balance. Investments in forests benefit rural
+         communities and require partnerships across
+          sectors. Initiatives like the International 
+          Day of Forests and the International Year of
+           Forests raise awareness about forest conservation.
+            The Rio+20 outcome document stresses sustainable 
+            forest management, while Agenda 21 emphasizes 
+            combating deforestation, strengthening institutions,
+             enhancing conservation efforts, and improving
+              human capabilities for sustainable forest 
+              development.
       </p>
     </div>
   </div>
@@ -590,13 +501,14 @@ footer {
         <li class="menu__item"><a class="menu__link" href="#">Services</a></li>
         <li class="menu__item"><a class="menu__link" href="#">Team</a></li>
         <li class="menu__item"><a class="menu__link" href="#">Contact</a></li>
-  
+
       </ul>
       <p>&copy;2024 LIFE ON LAND | All Rights Reserved</p>
     </footer>
-  </fotter>
-  <script src="navbar.js"></script>
-  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
-</body>
+    <script src="javascript/navbar.js"></script>
+    <script type="module"
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <!-- <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script> -->
+  </body>
+
 </html>
