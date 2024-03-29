@@ -27,6 +27,12 @@
             padding: 20px;
 
         }
+        #confirm-container{
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            text-align: right;
+        }
 
         h1 {
             text-align: center;
@@ -37,7 +43,7 @@
             background-color: #f0f0f0;
             border-radius: 9px;
             margin-bottom: 20px;
-            width:500px;
+            max-width:500px;
             margin-left: auto;
             margin-right: auto;
         }
@@ -54,12 +60,12 @@
             margin-bottom: 10px;
         }
 
-        #profile-output {
-            
-        }
-
         .profile-item {
             margin-bottom: 10px;
+        }
+        #button-container{
+            text-align: right;
+            padding-right: 5%;
         }
         .Outputs{
             background-color: rgba(255, 255, 255, 0.206);
@@ -76,7 +82,7 @@
             margin: 10px;
         }
         .PromptBar{
-            width: 95%;
+            width: 90%;
             display: flex;
             border-radius: 10px;
             border-width: 0px;
@@ -93,6 +99,7 @@
 
         }
         .Buttons{
+            text-align: right;
             margin-left: 5px;
             padding-left: 10px;
             padding-right: 10px;
@@ -109,8 +116,11 @@
             transform: scale(1.1);
         }
         
-        #backButton{
-            margin-left: 75%;
+        
+        #backButton:disabled , #nextButton:disabled , #skipButton:disabled{
+            background-color: #e2e2e2; /* Change background color to gray */
+            color: #00000094; /* Change text color to a lighter shade */
+            cursor: not-allowed; /* Change cursor to indicate it's not clickable */
         }
         #question-part-details{
             padding-top: 1px;
@@ -160,15 +170,14 @@
         <div id="prompt-container">
             <!-- Prompts will be dynamically added here -->
         </div>
-        <div id="confirm-container" style="display: none;">
-            <button class="Buttons" onclick="confirmPart()">Confirm</button>
-        </div>
         <div class="Outputs">
             <div id="profile-output">
                 <!-- User profile output will be dynamically updated here -->
             </div>
         </div>
-        
+        <div id="confirm-container" style="display: none;">
+            <button class="Buttons" onclick="confirmPart()">Confirm</button>
+        </div>
         <div class="progress-bar">
             <div class="progress" id="progress"></div>
         </div>
@@ -231,11 +240,11 @@
                         <input type="text" class="PromptBar" id="input-${currentStep}" data-step="${currentStep}">
                         <br>
                     `;
-                }else if(prompts[currentStep].type ==="Radio"){
+                }else if (prompts[currentStep].type === "Radio") {
                     promptGetHTML = `
-                        <label class="PromptLabel">${prompts[currentStep].prompt}</label><br>
-                        <input type="radio" class="PromptBar" id="input-${currentStep}" name="input-${currentStep}" value="Yes">
-                        <label for="input-${currentStep}">Agree</label><br>
+                        <label for="input-${currentStep}">I agree to the terms and conditions:</label>
+                        <input type="checkbox" id="input-${currentStep}" onchange="handleCheckbox(this)" checked>
+                        <br>
                     `;
                 }else if (prompts[currentStep].type==="Option"){
                     promptGetHTML = `
@@ -252,9 +261,11 @@
                     `;
                 }
                 let buttonHTML = `
+                    <div id ="button-container">
                     <button class="Buttons" onclick="backQuestion()" id="backButton">Back</button>
                     <button class="Buttons" onclick="nextStep()" id="nextButton">Next</button>
                     <button class="Buttons" id="skipButton" onclick="skipQuestion()">Skip</button>
+                    </div>
                 `;
                 
                 promptElement.innerHTML = promptGetHTML + buttonHTML;
@@ -262,14 +273,20 @@
                 displayProfilePart(currentPart);
 
                 // Check if the field is unskippable and enable/disable the next button accordingly
+                if (currentStep === 0) {
+                    backButton.disabled = true; // Disable the back button when on the first step
+                } else {
+                    backButton.disabled = false; // Enable the back button for other steps
+                }
                 const nextButton = document.getElementById('nextButton');
                 const inputField = document.getElementById(`input-${currentStep}`);
-                if (!isSkippable && inputField.value === '' ) {
-                    nextButton.disabled = true;
+                if(!isSkippable){
                     skipButton.disabled = true;
+                }
+                if (inputField.value === '' || prompts[currentPart].answer==='') {
+                    nextButton.disabled = true;
                     inputField.addEventListener('input', function() {
                         nextButton.disabled = this.value === '';
-                        skipButton.disabled = this.value === '';
                     });
                 }
             } else {
@@ -289,12 +306,14 @@
             currentStep = 0;
             promptContainer.innerHTML = ''; // Clear the prompt container
 
+            // Hide the confirm container
+            document.getElementById('confirm-container').style.display = 'none';
+
             // Proceed to the next part
             currentPart++;
             if (currentPart <= 4) {
                 displayPrompt();
             } else {
-                document.getElementById('confirm-container').style.display = 'none';
                 displayProfile(); // All parts completed, display profile
             }
         }
@@ -348,21 +367,20 @@
             if(currentStep<prompts.length){
                 displayPrompt(); // Display next prompt or proceed to the next part
             }
-            if (currentStep === prompts.length) {
-                document.getElementById('confirm-container').style.display = 'block';
-            } else {
-                document.getElementById('confirm-container').style.display = 'none';
-                promptContainer.style.display = 'none';
+            if (prompts[currentStep] && prompts[currentStep].answer !== "") {
+                // Set the value of the next input field to the answer of the current step
+                const nxtAnswer = prompts[currentStep].answer;
+                const inputField = document.getElementById(`input-${currentStep}`);
+                inputField.value = nxtAnswer;
             }
+            
             if (currentStep === prompts.length) {
-                displayProfilePart(currentPart);
+                displayProfilePart(currentPart)
                 document.getElementById('confirm-container').style.display = 'block';
                 promptContainer.style.display = 'none';
                 partDetail.style.display = 'none';
             } else {
                 document.getElementById('confirm-container').style.display = 'none';
-                
-
             }
         }
         function backQuestion() {
@@ -381,7 +399,20 @@
                 const prevAnswer = prompts[currentStep].answer;
                 const inputField = document.getElementById(`input-${currentStep}`);
                 inputField.value = prevAnswer;
-            }  
+            }else{
+                backQuestion.disabled;
+            } 
+        }
+
+        function handleCheckbox(checkbox) {
+            const nextButton = document.getElementById('nextButton');
+            if (checkbox.checked) {
+                nextButton.disabled = false;
+                checkbox.value = 'Yes';
+            } else {
+                nextButton.disabled = true;
+                checkbox.value = '';
+            }
         }
 
         // Function to display user profile
