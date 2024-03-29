@@ -1,0 +1,333 @@
+@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap");
+
+/* @import url(styles\shared\navbar.css); */
+
+:root {
+  --primaryColor: #ffb534;
+  --mainWhite: rgb(251, 246, 238);
+  --mainGreen: #27ae60;
+  --subGreen: #66cf43;
+  --mainSpacing: 0.1rem;
+  --box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.1);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  outline: none;
+  border: none;
+  transition: all 0.2s linear;
+  font-family: "Noto sans", sans-serif;
+}
+
+.hero {
+  margin-top: 150px;
+  /* height: 50vh; */
+  background-color: var(--mainGreen);
+  background-image: url(../../images/leaves.jpg);
+  background-size: cover;
+  background-blend-mode: multiply;
+
+  /* justify-content: center; */
+  align-items: center;
+  padding: 3rem 7%;
+}
+
+.back-img {
+  object-fit: cover;
+}
+
+.hero-grid {
+  display: flex;
+  justify-content: space-between;
+}
+
+.column-1 {
+  display: flex;
+  align-items: center;
+}
+
+.column-1 h2 {
+  width: 25rem;
+}
+
+.column-2 {
+  display: flex;
+  align-items: center;
+  padding-right: 32vw;
+}
+
+.heading {
+  font-family: "Oswald", sans-serif;
+  font-size: 5rem;
+  font-weight: bold;
+  color: white;
+}
+
+.shape-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+
+.shape {
+  position: relative;
+  width: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  aspect-ratio: 1;
+  border-radius: 50% 3% 50% 50%;
+  /* background-color: white; */
+  padding: 1rem;
+  background: rgba(255, 255, 255, 0.36);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+.circle {
+  /* background-color: var(--subGreen); */
+  /* border: 7px solid black; */
+  border-radius: 50%;
+  height: calc(100px - 2rem);
+  aspect-ratio: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.36);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+.goal-number {
+  font-family: "Oswald", sans-serif;
+  font-weight: bold;
+  font-size: 3rem;
+}
+
+.sub-shape {
+  position: absolute;
+  padding: 1rem;
+  background: rgba(255, 255, 255, 0.36);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  /* opacity: 0.5; */
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* transform: translateX(-20rem); */
+  /* min-width: 20rem; */
+  width: 30rem;
+  display: none;
+}
+
+.sub-shape span {
+  color: white;
+  font-size: 1.5rem;
+  font-weight: bold;
+  opacity: 1;
+}
+
+.shape:hover {
+  .sub-shape {
+    display: flex;
+    transform: translateX(20rem);
+    transition: all 0.2s ease-in-out;
+  }
+}
+
+/* .shape:nth-child(2) {
+  rotate: -90deg;
+} */
+
+/* .shape:hover {
+  --rotate-angle: -45deg;
+  rotate: var(--rotate-angle);
+} */
+
+/* .goal {
+  /* font-size: 2rem;
+  text-align: center;
+  rotate: calc(var(--rotate-angle) * -1);
+} */
+
+/* .header {
+  top: auto;
+} */
+
+/* @media (max-width: px) {
+  .column-1 {
+    padding-left: 0;
+  }
+
+  .hero-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+} */
+
+.main {
+  margin-top: 150px;
+}
+
+.products-grid {
+  display: grid;
+
+  /* - In CSS Grid, 1fr means a column will take up the
+       remaining space in the grid.
+     - If we write 1fr 1fr ... 1fr; 8 times, this will
+       divide the grid into 8 columns, each taking up an
+       equal amount of the space.
+     - repeat(8, 1fr); is a shortcut for repeating "1fr"
+       8 times (instead of typing out "1fr" 8 times).
+       repeat(...) is a special property that works with
+       display: grid; */
+  grid-template-columns: repeat(8, 1fr);
+}
+
+/* @media is used to create responsive design (making the
+   website look good on any screen size). This @media
+   means when the screen width is 2000px or less, we
+   will divide the grid into 7 columns instead of 8. */
+@media (max-width: 2000px) {
+  .products-grid {
+    grid-template-columns: repeat(7, 1fr);
+  }
+}
+
+/* This @media means when the screen width is 1600px or
+   less, we will divide the grid into 6 columns. */
+@media (max-width: 1600px) {
+  .products-grid {
+    grid-template-columns: repeat(6, 1fr);
+  }
+}
+
+@media (max-width: 1300px) {
+  .products-grid {
+    grid-template-columns: repeat(5, 1fr);
+  }
+}
+
+@media (max-width: 1000px) {
+  .products-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media (max-width: 800px) {
+  .products-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 575px) {
+  .products-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 450px) {
+  .products-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.product-container {
+  padding-top: 40px;
+  padding-bottom: 25px;
+  padding-left: 25px;
+  padding-right: 25px;
+
+  border-right: 1px solid rgb(231, 231, 231);
+  border-bottom: 1px solid rgb(231, 231, 231);
+
+  display: flex;
+  flex-direction: column;
+}
+
+.product-image-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  height: 180px;
+  margin-bottom: 20px;
+}
+
+.product-image {
+  /* Images will overflow their container by default. To
+    prevent this, we set max-width and max-height to 100%
+    so they stay inside their container. */
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.product-name {
+  height: 40px;
+  margin-bottom: 5px;
+}
+
+.product-rating-container {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.product-rating-stars {
+  width: 100px;
+  margin-right: 6px;
+}
+
+.product-rating-count {
+  color: rgb(1, 124, 182);
+  cursor: pointer;
+  margin-top: 3px;
+}
+
+.product-price {
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.product-quantity-container {
+  margin-bottom: 17px;
+}
+
+.product-spacer {
+  flex: 1;
+}
+
+.added-to-cart {
+  color: rgb(6, 125, 98);
+  font-size: 16px;
+
+  display: flex;
+  align-items: center;
+  margin-bottom: 8px;
+
+  /* At first, the "Added to cart" message will
+     be invisible. Use JavaScript to change the
+     opacity and make it visible. */
+  opacity: 0;
+}
+
+.added-to-cart img {
+  height: 20px;
+  margin-right: 5px;
+}
+
+.add-to-cart-button {
+  width: 100%;
+  padding: 8px;
+  border-radius: 50px;
+}
