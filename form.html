@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    
+
     <title>Feedback Form</title>
     <style>
       body {
@@ -12,6 +12,7 @@
         color: #000000;
         background-image: url(images/formbg.jpg);
         background-repeat: no-repeat;
+        background-size: cover;
         /* background-size: 100% 100%; */
       }
 
@@ -45,13 +46,22 @@
       input.text_filds,
       textarea.text_filds {
         margin-left: 3%;
-        margin-bottom: 5%;
+        margin-bottom: 2%;
         width: 60%;
         padding: 8px;
         border: 1px solid #ccc;
         border-radius: 4px;
       }
-
+      .updates{
+        border-radius: 10px;
+        overflow: hidden;
+        width: 150px;
+        height: 40px;
+      }
+      .updates option{
+        text-align: center;
+        font-family: 'Courier New', Courier, monospace;
+      }
       button {
         width: 100%;
         padding: 10px;
@@ -82,6 +92,14 @@
         vertical-align: top;
         margin-right: 2%;
       }
+      .rate_radio{
+        display: flex;
+        flex-direction: column;
+      }
+      .rate_flex{
+        display: flex;
+        justify-content: space-around;
+      }
     </style>
   </head>
   <body>
@@ -95,11 +113,11 @@
         <div class="radio_button_area">
           <label for="yes">
             <h3>Was this your first visit?</h3>
-            <input type="radio" id="yes" name="first_time_visit" value="yes" />
+            <input type="radio" id="yes" name="first_time_visit" value="Yes" />
             Yes
           </label>
           <label for="no">
-            <input type="radio" id="no" name="first_time_visit" value="no" />
+            <input type="radio" id="no" name="first_time_visit" value="No" />
             No
           </label>
         </div>
@@ -110,9 +128,8 @@
               type="radio"
               id="yes_ux"
               name="ux"
-              value="yes_ux"
-              onclick="disable_text_area()"
-            />
+              value="Yes"
+              onclick="disable_text_area()" />
             Yes
           </label>
           <label for="no_ux">
@@ -120,81 +137,86 @@
               type="radio"
               id="no_ux"
               name="ux"
-              value="no_ux"
-              onclick="enable_text_area()"
-            />
+              value="No"
+              onclick="enable_text_area()" />
             No
           </label>
         </div>
         <label for="message">If "NO" suggest any improvment for future</label>
         <div id="disable_area">
-          <textarea id="message" name="message" class="text_filds"></textarea>
+          <textarea id="message" name="message"
+           class="text_filds" placeholder="Add your message here ..."></textarea>
         </div>
         <div class="rating_area">
           <h3>
             How satisfied are you with our services? Choose 0 to 10, with 1
             being "Not satisfied at all!" and 10 being "Extremely satisfied!"
           </h3>
-          <label for="1">
-            1
+          <div class="rate_flex">
+          <span class="rate_radio">
+            <label for="1">1</label>
             <input type="radio" id="1" name="rate" value="1" />
-          </label>
-          <label for="2">
-            2
+          </span>
+          <span class="rate_radio">
+            <label for="2">2</label>
             <input type="radio" id="2" name="rate" value="2" />
-          </label>
-          <label for="3">
-            3
+          </span>
+          <span class="rate_radio">
+            <label for="3">3</label>
             <input type="radio" id="3" name="rate" value="3" />
-          </label>
-          <label for="4">
-            4
+          </span>
+          <span class="rate_radio">
+            <label for="4">4</label>
             <input type="radio" id="4" name="rate" value="4" />
-          </label>
-          <label for="5">
-            5
+          </span>
+          <span class="rate_radio">
+            <label for="5">5</label>
             <input type="radio" id="5" name="rate" value="5" />
-          </label>
-          <label for="6">
-            6
+          </span>
+          <span class="rate_radio">
+            <label for="6">6</label>
             <input type="radio" id="6" name="rate" value="6" />
-          </label>
-          <label for="7">
-            7
+          </span>
+          <span class="rate_radio">
+            <label for="7">7</label>
             <input type="radio" id="7" name="rate" value="7" />
-          </label>
-          <label for="8">
-            8
+          </span>
+          <span class="rate_radio">
+            <label for="8">8</label>
             <input type="radio" id="8" name="rate" value="8" />
-          </label>
-          <label for="9">
-            9
+          </span>
+          <span class="rate_radio">
+            <label for="9">9</label>
             <input type="radio" id="9" name="rate" value="9" />
-          </label>
-          <label for="10">
-            10
+          </span>
+          <span class="rate_radio">
+            <label for="10">10</label>
             <input type="radio" id="10" name="rate" value="10" />
-          </label>
+          </span>
+          </div>
         </div>
         <div class="radio_button_area">
           <h3>Would you recommend our services?</h3>
           <label for="yes_like">
-            <input type="radio" id="yes_like" name="like" value="yes_like" />
+            <input type="radio" id="yes_like" name="like" value="Yes" />
             Yes
           </label>
           <label for="no_like">
-            <input type="radio" id="no_like" name="like" value="no_like" />
+            <input type="radio" id="no_like" name="like" value="No">
             No
           </label>
         </div>
         <label for="updates">
           <h3>Would you like to receive updates about new features</h3>
-          <input
-            type="text"
-            name="updates"
-            id="updates"
-            style="height: 60px; width: 200px"
-          />
+          <select ID ="updates" name="updates" class="updates">
+            <option value="Yes-Email">Yes-Email</option>
+            <option value="No">No</option>
+          </select> 
+        </label> 
+        <label for="quz">
+          <h3>Do you have any aditional question or request. Please provide details:</h3>
+          <textarea id="quz" name="question"class="text_filds"
+            rows="4" placeholder="Add your message here ..."></textarea>
         </label>
         <br /><br />
         <button type="button" onclick="execute_form(this.form)">
@@ -212,8 +234,6 @@
       }
 
       // Function to validate form
-      // Function to validate form
-      // Function to validate form
       function execute_form(form) {
         event.preventDefault()
 
@@ -221,6 +241,7 @@
         const emailInput = document.getElementById('email')
         const messageInput = document.getElementById('message')
         const errorMessage = document.getElementById('error-message')
+        let additional = document.getElementById('question')
 
         errorMessage.textContent = ''
 
@@ -249,6 +270,11 @@
         } else {
           msg_new = true
         }
+        if(form.question.value.trim()===''){
+          additional = 'There is no aditional  question or request'
+        }else{
+          additional = form.question.value.trim()
+        }
 
         // Form is valid, prepare data for preview
         if (name_new && email_new && msg_new) {
@@ -256,21 +282,18 @@
             name: form.name.value.trim(),
             email: form.email.value.trim(),
             message: form.message.value.trim(),
-            first_time_visit: getRadioGroupValue(form.first_time_visit),
-            ux: getRadioGroupValue(form.ux),
-            rate: getRadioGroupValue(form.rate),
-            like: getRadioGroupValue(form.like),
             updates: form.updates.value.trim()
           }
 
-          console.log(formData)
-
+           getSelectedChoices();
+           getSelectedValue();
           // Redirect to preview page
           redirectToPreview(formData)
 
-          sessionStorage.setItem('Message', form.name.value)
+          sessionStorage.setItem('Message', form.message.value)
           sessionStorage.setItem('Email', form.email.value)
-          sessionStorage.setItem('Name', form.message.value)
+          sessionStorage.setItem('Name', form.name.value)
+          sessionStorage.setItem("Additional", additional);
         }
 
         return true
@@ -280,10 +303,10 @@
       function getRadioGroupValue(radioGroup) {
         for (let i = 0; i < radioGroup.length; i++) {
           if (radioGroup[i].checked) {
-            return radioGroup[i].value
+            return radioGroup[i].value;
           }
         }
-        return ''
+        return "not selected";
       }
 
       // Function to validate email format
@@ -301,78 +324,78 @@
         //  Redirect to preview page
         window.location.href = previewUrl
       }
-
-      // Reset form fields when the form page loads
-      document.addEventListener('DOMContentLoaded', () => {
-        resetForm()
-      })
-      //getting radio button input
-      function getSelectedChoice() {
-        const visit = document.querySelectorAll(
-          'input[name="first_time_visit"]'
-        )
-        const ux = document.querySelectorAll('input[name="ux"]')
-        const rate = document.querySelectorAll('input[name="rate"]')
-        const like = document.querySelectorAll('input[name="like"]')
-
+      function getSelectedChoices(){
+        const first_time_visit = document.querySelectorAll('input[name="first_time_visit"]');
+        const ux = document.querySelectorAll('input[name="ux"]');
+        const rate = document.querySelectorAll('input[name="rate"]');
+        const like = document.querySelectorAll('input[name="like"]');
+      
         function isRadioSelected(radioArray) {
-          for (let i = 0; i < radioArray.length; i++) {
-            if (radioArray[i].checked) {
-              return true
+            for (let i = 0; i < radioArray.length; i++) {
+                if (radioArray[i].checked) {
+                    return true;
+                }
             }
-          }
-          return false
+            return false;
         }
-        console.log(visit)
-        console.log(ux)
-        console.log(rate)
-        console.log(like)
-        const visit_selected = isRadioSelected(visit)
-        const ux_selected = isRadioSelected(ux)
-        const rate_selected = isRateSelected(rate)
-        const like_selected = isLikeSelected(like)
+        const first_time_visitSelected = isRadioSelected(first_time_visit);
+        const  uxSelected = isRadioSelected(ux);
+        const  rateSelected=isRadioSelected(rate);
+        const  likeSelected=isRadioSelected(like);
 
-        // if (visit_selected && ux_selected &&  rate_selected && like_selected){
-        //    return [...visit, ...ux, ...rate, ...like]
-        //           .filter(el=> el.checked).map(d=> d.value).join("");
-        // } else{
-        //   alert ("Please make sure you have selected all options.")
-        // }
-        if (visit_selected && ux_selected && rate_selected && like_selected) {
-          const selected_visit = getRadioValue(visit, 'First time visitor:')
-          const selected_ux = getRadiosValues(ux, 'UX Rating: ')
-          const selected_rating = getRating(
-            rate,
-            'How likely are you to recommend this website? '
-          )
-          const selected_like = getYesNo(like, 'Do you like our website?')
-
-          return {
-            'Visitor Type': selected_visit,
-            'UX Rating': selected_ux,
-            Recommendation: selected_rating,
-            'Website Likeability': selected_like
-          }
+        if(first_time_visitSelected){
+          const FTVvalue = getRadioValue(first_time_visit);
+          sessionStorage.setItem( "FTV",FTVvalue );
+        }else{
+          const FTVvalue = "Not Selected";
+          sessionStorage.setItem( "ftv",FTVvalue );
         }
 
-        // Function to retrieve the selected radio button value
-        function getRadioValue(radioArray) {
-          for (let i = 0; i < radioArray.length; i++) {
-            if (radioArray[i].checked) {
-              return radioArray[i].value
-            }
-          }
-          return ''
+        if(uxSelected){
+          const UXvalue = getRadioValue(ux);
+          sessionStorage.setItem("ux",UXvalue);
+        }else{
+          const  UXvalue ="Not Selected" ;
+          sessionStorage.setItem("ux",UXvalue);
+        }
+        if(rateSelected){
+          const ratingValue = getRadioValue(rate);
+          sessionStorage.setItem("rating",ratingValue);
+        }else{
+          const ratingValue=  "Not Rated";
+          sessionStorage.setItem("rating",ratingValue);
+        }
+        if(likeSelected){
+          const likeValue = getRadioValue(like);
+          sessionStorage.setItem("like",likeValue);
+        }else{
+          const  likeValue = "Not Selected";
+          sessionStorage.setItem("like",likeValue);
         }
       }
+
+      function getRadioValue(radioArray) {
+        for (let i = 0; i < radioArray.length; i++) {
+            if (radioArray[i].checked) {
+                return radioArray[i].value;
+            }
+        }
+        return "";
+    }
+    function getSelectedValue(){
+      const selectList = document.getElementById("updates");
+  const selectedValue = selectList.options[selectList.selectedIndex].value;
+  sessionStorage.setItem("updates", selectedValue); 
+    }
+
       function disable_text_area() {
         document.getElementById('disable_area').innerHTML =
-          "<textarea id='message' name='message' class='ext_filds' disabled></textarea>"
+          "<textarea id='message' name='message' class='text_filds' disabled></textarea>"
       }
 
       function enable_text_area() {
         document.getElementById('disable_area').innerHTML =
-          "<textarea id='message' name='message' class='ext_filds'></textarea>"
+          "<textarea id='message' name='message' class='text_filds'></textarea>"
       }
     </script>
   </body>
