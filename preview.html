@@ -4,63 +4,13 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Feedback Form Preview</title>
-<link rel="stylesheet" href="css/style_navbar.css" type="text/css" />
+<link rel="stylesheet" href="css/navbar.css" type="text/css" />
 <link href="https://fonts.googleapis.com/css?family=Rammetto One"
   rel="stylesheet" />
 <link href="https://fonts.googleapis.com/css2?family=Material+Icons"
   rel="stylesheet" />
-<link rel="stylesheet" href="css/style_footer.css" type="text/css" />
-<style>
-  body {
-    font-family: Arial, sans-serif;
-    background-color: rgba(255, 255, 255, 0.521);
-    color: #000000;
-  }
-
-  .container {
-    max-width: 600px;
-    margin: 50px auto;
-    padding: 20px;
-    background-color: #accaae;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    text-align: center;
-  }
-
-  h2 {
-    text-align: center;
-    margin-bottom: 20px;
-  }
-
-  .preview-content {
-    text-align: left;
-    margin-top: 20px;
-  }
-
-  .preview-content p {
-    margin-bottom: 10px;
-  }
-
-  button {
-    margin-top: 20px;
-    padding: 10px;
-    background-color: #007bff;
-    color: #fff;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-  }
-
-  button:hover {
-    background-color: #0056b3;
-  }
-  .thank-you-message {
-    display: none;
-    /* margin-top: 10px; */
-    color: green;
-    font-weight: bold;
-  }
-</style>
+<link rel="stylesheet" href="css/footer.css" type="text/css" />
+<link rel="stylesheet" href="css/preview.css" type="text/css" />
 </head>
 <body>
   <header>
@@ -69,11 +19,12 @@
 
       <div class="desktop-menu">
         <a href="home.html">Home</a>
-                    <a href="shop.html">Shop</a>
-                    <a href="feedback.html">Feedback</a>
-                    <a href="profile.html">Profile</a>
-                    <a href="sitemap.html">Site Map</a>
-                    <a href="gallery.html">Gallery</a>
+        <a href="shop.html">Shop</a>
+        <a href="feedback.html">Feedback</a>
+        <a href="profile.html">Profile</a>
+        <a href="sitemap.html">Site Map</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="team.html">Team</a>
       </div>
 
       <button class="hamburger">
@@ -83,11 +34,12 @@
 
     <div class="mobile-menu">
       <a href="home.html">Home</a>
-                    <a href="shop.html">Shop</a>
-                    <a href="feedback.html">Feedback</a>
-                    <a href="profile.html">Profile</a>
-                    <a href="sitemap.html">Site Map</a>
-                    <a href="gallery.html">Gallery</a>
+      <a href="shop.html">Shop</a>
+      <a href="feedback.html">Feedback</a>
+      <a href="profile.html">Profile</a>
+      <a href="sitemap.html">Site Map</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="team.html">Team</a>
     </div>
   </header>
   <div class="container">
@@ -95,13 +47,14 @@
     <div class="preview-content" id="previewContent">
       <!-- Form data will be filled here -->
     </div>
-    <button onclick="goBack()" id="goback_button">Go Back</button>
-    <button id="submitButton">Submit</button>
+    <div class="btn-div">
+      <button onclick="goBack()" id="goback_button">Go Back</button>
+      <button id="submitButton">Submit</button>
+</div>
     <div class="thank-you-message" id="thankYouMessage">Thank you for your feedback!</div>
   </div>
-  <footer>
+  <footer class="footer_container">
     <footer class="footer">
-      
       <ul class="menu">
         <li class="menu__item"><a class="menu__link" href="home.html">Home</a></li>
         <li class="menu__item"><a class="menu__link" href="shop.html">Shop</a></li>
@@ -109,65 +62,16 @@
         <li class="menu__item"><a class="menu__link" href="profile.html">Profile</a></li>
         <li class="menu__item"><a class="menu__link" href="sitemap.html">Site Map</a></li>
         <li class="menu__item"><a class="menu__link" href="gallery.html">Gallery</a></li>
-        <li class="menu__item"><a class="menu__link" href="page_editor_st2.html">Page Editor</a></li>
+        <li class="menu__item"><a class="menu__link" href="page_editor_st2.html">Editor page</a></li>
+        <li class="menu__item"><a class="menu__link" href="team.html">Team</a></li>
       </ul>
       <p>&copy;2024 LIFE ON LAND | All Rights Reserved</p>
-      
+    </footer>
     </footer>
     <script src="javascript/navbar.js"></script>
+    <script src="javascript/preview.js"></script>
     <script type="module"
       src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-  <script>
- 
-    // Display form data in the preview
-    // const formData = getFormData();
-    const Name = sessionStorage.getItem('Name');
-    const Email = sessionStorage.getItem('Email');
-    const Massage = sessionStorage.getItem('Message');
-    const ux = sessionStorage.getItem('ux');
-    const FTV = sessionStorage.getItem( 'FTV' );
-    const rate = sessionStorage.getItem('rating');
-    const like = sessionStorage.getItem("like");
-    const updates = sessionStorage.getItem("updates");
-    const additional = sessionStorage.getItem("Additional")
-    const submitButton = document.getElementById('submitButton');
-  const previewContent1 = document.getElementById('previewContent');
-  const thankYouMessage = document.getElementById('thankYouMessage');
-  const go_back = document.getElementById('goback_button') ;
-  const preview_msg = document.getElementById('preview-msg');
-
-    // if (formData) {
-      const previewContent = document.getElementById('previewContent');
-      previewContent.innerHTML = `
-        <p><strong>Name:</strong> ${Name}</p>
-        <p><strong>Email:</strong> ${Email}</p>
-        <p><strong>Was this your first visit?:</strong> ${FTV}</p>
-        <p><strong>Was this website informative and easy to navigate?:</strong> ${ux}</p>
-        <p><strong>Message:</strong> ${Massage}</p>
-        <p><strong>How satisfied are you with our services?:</strong> ${rate}</p>
-        <p><strong>Would you recommend our services?:</strong> ${like}</p>
-        <p><strong>Would you like to receive updates about new features ?:</strong> ${updates}</p>
-        <p><strong>Do you have any aditional question or 
-          request. Please provide details ? :</strong> ${additional}</p>
-        `;
-
-
-    submitButton.addEventListener('click', function() {
-      previewContent1.style.display = 'none';
-      thankYouMessage.style.display = 'block';
-      submitButton.style.display = 'none';
-      go_back.style.display = 'none';
-      preview_msg.style.display = 'none'
-    });
-
-    // }
-
-    // Function to navigate back to the form page
-    function goBack() {
-      window.history.back();
-    }
-
-    
-  </script>
+  
 </body>
 </html>

@@ -1,15 +1,13 @@
 *{
-    margin: 0%;
-    padding: 0%;
+    margin: 0;
+    padding: 0;
 }
-nav{
-    height: 70px;
-}
+
 body{
     font-family: monospace;
     background-image: url(../images/contentBG.jpg);background-repeat: no-repeat;background-attachment: fixed;background-size: cover;
 }
-.content{margin-top: 100px;display: flex;flex-direction: column;text-align: center;background-image: url(../images/content_top.jpg);background-repeat: no-repeat;
+.content{margin-top: 80px;display: flex;flex-direction: column;text-align: center;background-image: url(../images/content_top.jpg);background-repeat: no-repeat;
     background-size: cover;padding-bottom: 4%;
 }
 .topics{display: flex;flex-wrap: wrap;flex-direction: column;margin: auto;width: 700px;height: 700px;margin-top: 3%;align-items: center;
