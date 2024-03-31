@@ -5,33 +5,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <title>Feedback Form</title>
-    <link  rel="stylesheet" href="css/style_footer.css">
-    <link  rel="stylesheet" href="css/style_navbar.css">
+    <link rel="stylesheet" href="css/style_navbar.css" type="text/css" />
+    <link href="https://fonts.googleapis.com/css?family=Rammetto One"
+      rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Icons"
+      rel="stylesheet" />
+    <link rel="stylesheet" href="css/style_footer.css" type="text/css" />
     <style>
       *{
-padding: 0;
-margin: 0;
+        margin: 0;
+        padding: 0;
       }
-      body {
-        font-family: Arial, sans-serif;
-        /* background-color: rgba(255, 255, 255, 0.521); */
-        color: #000000;
-        background-image: url(images/formbg.jpg);
-        background-repeat: no-repeat;
-        background-size: cover;
-        /* background-size: 100% 100%; */
+      body {font-family: Arial, sans-serif;color: #000000;background-image: url(images/formbg.jpg);
+        background-repeat: no-repeat;background-size: cover;
       }
-
-      .container {
-        max-width: 600px;
-        margin: 50px auto;
-        padding: 20px;
-        border: 1px solid rgba(255, 255, 255, 0.25);
-        border-radius: 20px;
-        background-color: rgba(255, 255, 255, 0.301);
-        box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.25);
-        backdrop-filter: blur(15px);
-        text-align: center;
+      .container {max-width: 600px;margin: 50px auto;padding: 20px;border: 1px solid rgba(255, 255, 255, 0.25);
+        border-radius: 20px;background-color: rgba(255, 255, 255, 0.301);box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.25);
+        backdrop-filter: blur(15px);text-align: center;
       }
 
       h2 {
@@ -50,13 +40,7 @@ margin: 0;
       }
 
       input.text_filds,
-      textarea.text_filds {
-        margin-left: 3%;
-        margin-bottom: 2%;
-        width: 60%;
-        padding: 8px;
-        border: 1px solid #ccc;
-        border-radius: 4px;
+      textarea.text_filds {margin-left: 3%;margin-bottom: 2%;width: 60%;padding: 8px;border: 1px solid #ccc;border-radius: 4px;
       }
       .updates{
         border-radius: 10px;
@@ -115,11 +99,11 @@ margin: 0;
   
         <div class="desktop-menu">
           <a href="home.html">Home</a>
-          <a href="#">Shop</a>
-          <a href="form.html">Feedback</a>
-          <a href="#">Profile</a>
-          <a href="#">Site Map</a>
-          <a href="#">Gallery</a>
+                      <a href="shop.html">Shop</a>
+                      <a href="feedback.html">Feedback</a>
+                      <a href="profile.html">Profile</a>
+                      <a href="sitemap.html">Site Map</a>
+                      <a href="gallery.html">Gallery</a>
         </div>
   
         <button class="hamburger">
@@ -129,11 +113,11 @@ margin: 0;
   
       <div class="mobile-menu">
         <a href="home.html">Home</a>
-        <a href="#">Shop</a>
-        <a href="form.html">Feedback</a>
-        <a href="#">Profile</a>
-        <a href="#">Site Map</a>
-        <a href="#">Gallery</a>
+                      <a href="shop.html">Shop</a>
+                      <a href="feedback.html">Feedback</a>
+                      <a href="profile.html">Profile</a>
+                      <a href="sitemap.html">Site Map</a>
+                      <a href="gallery.html">Gallery</a>
       </div>
     </header>
     <div class="container">
@@ -252,13 +236,30 @@ margin: 0;
             rows="4" placeholder="Add your message here ..."></textarea>
         </label>
         <br /><br />
-        <button type="button" onclick="execute_form(this.form)">
-          Submit Review
+        <button type="button" onclick="excute_form(this.form)">
+          Submit
         </button>
       </form>
       <p id="error-message"></p>
     </div>
-
+    <footer>
+      <footer class="footer">
+        
+        <ul class="menu">
+          <li class="menu__item"><a class="menu__link" href="home.html">Home</a></li>
+          <li class="menu__item"><a class="menu__link" href="shop.html">Shop</a></li>
+          <li class="menu__item"><a class="menu__link" href="feedback.html">Feedback</a></li>
+          <li class="menu__item"><a class="menu__link" href="profile.html">Profile</a></li>
+          <li class="menu__item"><a class="menu__link" href="sitemap.html">Site Map</a></li>
+          <li class="menu__item"><a class="menu__link" href="gallery.html">Gallery</a></li>
+          <li class="menu__item"><a class="menu__link" href="page_editor_st2.html">Page Editor</a></li>
+        </ul>
+        <p>&copy;2024 LIFE ON LAND | All Rights Reserved</p>
+        
+      </footer>
+    <script src="javascript/navbar.js"></script>
+    <script type="module"
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
     <script>
       // Function to reset form fields
       function resetForm() {
@@ -267,9 +268,8 @@ margin: 0;
       }
 
       // Function to validate form
-      function execute_form(form) {
+      function excute_form(form) {
         event.preventDefault()
-
         const nameInput = document.getElementById('name')
         const emailInput = document.getElementById('email')
         const messageInput = document.getElementById('message')
@@ -287,17 +287,14 @@ margin: 0;
         } else {
           name_new = true
         }
-
         if (form.email.value.trim() === '') {
           errorMessage.textContent = 'Please enter your email.'
         } else {
           email_new = true
         }
-
         if (!isValidEmail(form.email.value.trim())) {
           errorMessage.textContent = 'Please enter a valid email address.'
         }
-
         if (form.message.value.trim() === '' && form.ux.value == 'no_ux') {
           errorMessage.textContent = 'Please enter your message.'
         } else {
@@ -311,17 +308,10 @@ margin: 0;
 
         // Form is valid, prepare data for preview
         if (name_new && email_new && msg_new) {
-          const formData = {
-            name: form.name.value.trim(),
-            email: form.email.value.trim(),
-            message: form.message.value.trim(),
-            updates: form.updates.value.trim()
-          }
-
            getSelectedChoices();
            getSelectedValue();
           // Redirect to preview page
-          redirectToPreview(formData)
+          window.location.href = "preview.html";
 
           sessionStorage.setItem('Message', form.message.value)
           sessionStorage.setItem('Email', form.email.value)
@@ -348,15 +338,6 @@ margin: 0;
         return emailRegex.test(email)
       }
 
-      // Function to redirect to preview page
-      function redirectToPreview(formData) {
-        //  Convert form data to URL parameters
-        const params = new URLSearchParams(formData)
-        const previewUrl = `preview.html?${params.toString()}`
-
-        //  Redirect to preview page
-        window.location.href = previewUrl
-      }
       function getSelectedChoices(){
         const first_time_visit = document.querySelectorAll('input[name="first_time_visit"]');
         const ux = document.querySelectorAll('input[name="ux"]');
@@ -425,46 +406,10 @@ margin: 0;
         document.getElementById('disable_area').innerHTML =
           "<textarea id='message' name='message' class='text_filds' disabled></textarea>"
       }
-
       function enable_text_area() {
         document.getElementById('disable_area').innerHTML =
           "<textarea id='message' name='message' class='text_filds'></textarea>"
       }
     </script>
-    <footer>
-      <footer class="footer">
-        <div class="waves">
-          <div class="wave" id="wave1"></div>
-          <div class="wave" id="wave2"></div>
-          <div class="wave" id="wave3"></div>
-          <div class="wave" id="wave4"></div>
-        </div>
-        <ul class="social-icon">
-          <li class="social-icon__item"><a class="social-icon__link" href="#">
-              <ion-icon name="logo-facebook"></ion-icon>
-            </a></li>
-          <li class="social-icon__item"><a class="social-icon__link" href="#">
-              <ion-icon name="logo-twitter"></ion-icon>
-            </a></li>
-          <li class="social-icon__item"><a class="social-icon__link" href="#">
-              <ion-icon name="logo-linkedin"></ion-icon>
-            </a></li>
-          <li class="social-icon__item"><a class="social-icon__link" href="#">
-              <ion-icon name="logo-instagram"></ion-icon>
-            </a></li>
-        </ul>
-        <ul class="menu">
-          <li class="menu__item"><a class="menu__link" href="#">Home</a></li>
-          <li class="menu__item"><a class="menu__link" href="#">About</a></li>
-          <li class="menu__item"><a class="menu__link" href="#">Services</a></li>
-          <li class="menu__item"><a class="menu__link" href="#">Team</a></li>
-          <li class="menu__item"><a class="menu__link" href="#">Contact</a></li>
-  
-        </ul>
-        <p>&copy;2024 LIFE ON LAND | All Rights Reserved</p>
-      </footer>
-      <script src="javascript/navbar.js"></script>
-      <script type="module"
-        src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
   </body>
 </html>

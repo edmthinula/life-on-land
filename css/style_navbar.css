@@ -10,12 +10,11 @@
 
 nav {
   letter-spacing: var(--mainSpacing);
+  
   font-family: "Noto sans", sans-serif;
-
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
+  position: fixed;top: 0;left: 0;right: 0;
+  padding: 1rem 7%;
+  height: 90px;
 
   z-index: 1000;
 
@@ -26,8 +25,6 @@ nav {
   background-color: var(--mainGreen);
   color: var(--mainWhite);
   box-shadow: var(--box-shadow);
-  padding: 1rem 7%;
-  height: 90px;
   /* display: none; */
 }
 
@@ -149,16 +146,7 @@ nav h1:hover {
   .hamburger {
     display: none;
   }
-
   .desktop-menu {
     display: flex;
   }
 }
-/* @media (max-height: 932px) {
-  .mobile-menu {
-    height: auto;
-    padding-top: 5.75rem;
-    padding-bottom: 1rem;
-  } */
-/* } */
-/* nav end */

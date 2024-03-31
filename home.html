@@ -1,342 +1,13 @@
 <!DOCTYPE html5>
-
 <head>
   <title>Home</title>
+  <link rel="stylesheet" type="text/css" href="css/home.css">
   <link rel="stylesheet" href="css/style_navbar.css" type="text/css" />
   <link href="https://fonts.googleapis.com/css?family=Rammetto One"
     rel="stylesheet" />
   <link href="https://fonts.googleapis.com/css2?family=Material+Icons"
     rel="stylesheet" />
   <link rel="stylesheet" href="css/style_footer.css" type="text/css" />
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-    body{
-      font-family: sans-serif;
-    }
-    div.slides {
-      width: 100%;
-      height: 600;
-      text-align: center;
-      margin: auto;
-      background-image: linear-gradient(rgb(69, 185, 94), rgb(11, 14, 5));
-      margin: 0%;
-      position: relative;
-      z-index: 1;
-      align-items: center;
-    }
-
-    div.middle {
-      margin: auto;
-      margin-top: -1%;
-      width: 100%;
-      height: 60%;
-      background-image: linear-gradient(rgb(0, 0, 0), rgb(162, 98, 38));
-      display: flex;
-      /* flex-wrap: wrap; */
-      z-index: 1;
-      justify-content: space-around;
-    }
-
-    .card {
-      margin-top: 5%;
-      width: 300px;
-      height: 360px;
-      border-radius: 15px;
-      padding: 1.5rem;
-      background: white;
-      position: relative;
-      display: flex;
-      align-items: flex-end;
-      transition: 0.4s ease-out;
-      box-shadow: 0px 7px 10px rgba(0, 0, 0, 0.5);
-    }
-
-    .card:hover {
-      transform: translateY(20px);
-    }
-
-    .card:hover:before {
-      opacity: 1;
-    }
-
-    .card:hover .info {
-      opacity: 1;
-      transform: translateY(0px);
-    }
-
-    .card:before {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 0;
-      display: block;
-      width: 100%;
-      height: 100%;
-      border-radius: 15px;
-      background: rgba(0, 0, 0, 0.6);
-      z-index: 2;
-      transition: 0.5s;
-      opacity: 0;
-    }
-
-    .card img {
-      width: 100%;
-      height: 100%;
-      -o-object-fit: cover;
-      object-fit: cover;
-      position: absolute;
-      top: 0;
-      left: 0;
-      border-radius: 15px;
-    }
-
-    .card .info {
-      position: relative;
-      z-index: 3;
-      color: white;
-      opacity: 0;
-      transform: translateY(30px);
-      transition: 0.5s;
-    }
-
-    .card .info h1 {
-      margin: 0px;
-    }
-
-    .card .info p {
-      letter-spacing: 1px;
-      font-size: 15px;
-      margin-top: 8px;
-    }
-
-    .card .info button {
-      padding: 0.6rem;
-      outline: none;
-      border: none;
-      border-radius: 3px;
-      background: white;
-      color: black;
-      font-weight: bold;
-      cursor: pointer;
-      transition: 0.4s ease;
-    }
-
-    .card .info button:hover {
-      background: dodgerblue;
-      color: white;
-    }
-
-    body {
-      background-color: #006a4e;
-    }
-
-    .middle_main {
-      position: relative;
-    }
-
-    .top_middle {
-      position: relative;
-      background-color: #428832;
-      width: 50%;
-      height: 5%;
-      margin-top: 2%;
-      left: 25%;
-      z-index: 2;
-      text-align: center;
-      border-radius: 20px;
-    }
-
-    .middle_with_images {
-      /* margin-top: 3%; */
-      position: relative;
-      /* padding-top: 3%; */
-      width: 100%;
-      height: 50%;
-      background-image: linear-gradient(rgb(162, 98, 38), rgb(0, 0, 0));
-      display: flex;
-      flex-direction: column;
-    }
-    .middle_with_images h1{
-      text-align: center;
-      font-family: cursive;
-      margin-bottom: 0%;
-    }
-    .columns{
-      margin: auto;
-      margin-top: 0%;
-      display: flex;
-      flex-direction: row;
-      height: 70%;
-    }
-    .images_side {
-      /* flex: 1; */
-      /* float: left; */
-      width: 40%;
-      height: 90%;
-      background-image: url(images/image1.jpg);
-      /* margin-left: 10%; */
-      margin: auto;
-      margin-top: 3%;
-      border: 2px solid #078a69;
-      /* Add a border to the image */
-      border-radius: 20px;
-    }
-
-    .text_side {
-      
-      margin: auto;
-      margin-top: 4%;
-      color: rgb(0, 255, 64);
-      line-height: 35px;
-      /* margin-right: 2%; */
-      width: 40%;
-      height: 90%;
-    }
-
-    .text_side>p {
-      font-weight: bold;
-      text-align: justify;
-    }
-
-    .text_background_img {
-      position: relative;
-      padding-top: 3%;
-      width: 100%;
-      height: 50%;
-      background-image: url(images/image2.jpg);
-    }
-
-    .top-text {
-      color: white;
-      /* Text color */
-      position: absolute;
-      display: flex;
-      flex-direction: row;
-      /* Absolute positioning within the overlay */
-
-      width: 100%;
-      height: 80%;
-      background-image: linear-gradient(rgb(0, 0, 0), rgba(255, 255, 255, 0));
-      top: 0;
-      left: 0;
-
-    }
-
-    .top-text>p {
-      font-family: cursive;
-      margin-left: 4%;
-      font-size: 18px;
-      line-height: 2em;
-      margin-right: 3%;
-      margin-top: 2%;
-      color: rgb(5, 255, 17);
-    }
-    .top-text h1{
-      margin-top: 7%;
-      margin-left: 4%;
-      background-color: #ffffff2f;
-      width: fit-content;
-      height: fit-content;
-      border-radius: 10px;
-      color: aquamarine;
-    }
-    .top-text hr{
-      margin-left: 3%;
-      margin-top: 3%;
-      height: 48%;
-    }
-    .top_main {
-      margin-top: 90px;
-      height: 700px;
-      display: flex;
-      padding: 0%;
-      background-repeat: no-repeat;
-      background-image: linear-gradient(to right,
-          rgba(145, 255, 0, 0),
-          rgba(28, 143, 6, 0.61));
-      border-radius: 20px;
-    }
-
-    .top_main img {
-      width: 100%;
-      height: 700px;
-      object-fit: cover;
-      position: relative;
-      margin: 0%;
-      padding: 0%;
-      z-index: -1;
-      border-radius: 20px;
-    }
-
-    .top_main .main_text {
-      position: absolute;
-      z-index: 2;
-      right: 3%;
-      top: 140px;
-      color: rgb(255, 255, 255);
-      width: 40%;
-      height: 500px;
-      text-align: left;
-      font-size: 40px;
-      font-weight: bold;
-      font-family: "Rammetto One";
-    }
-
-    .slides_img {
-      width: 100%;
-      height: 600px;
-      object-fit: cover;
-      position: relative;
-      margin: 0%;
-      padding: 0%;
-      /* z-index: -1; */
-      border-radius: 20px;
-    }
-
-    .mission_box {
-      position: absolute;
-      z-index: 2;
-      width: 80%;
-      height: 80%;
-
-      left: 10%;
-      top: 10%;
-      /* margin-top: 4%; */
-      z-index: 2;
-      /* background-color: ; */
-      border: 1px solid rgba(255, 255, 255, .25);
-      border-radius: 20px;
-      background-color: rgba(255, 255, 255, 0.274);
-      box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.25);
-
-      backdrop-filter: blur(15px);
-      /* max-width: 300px; */
-      min-height: 200px;
-    }
-
-    .mission_box h1 {
-      margin-top: 3%;
-      margin-bottom: 3%;
-      font-weight: 1000;
-      font-size: 40px;
-      color: #267f00;
-
-    }
-
-    .mission_box p {
-      margin-left: 4%;
-      text-align: justify;
-      margin-right: 4%;
-      font-weight: 500;
-      font-size: 30px;
-      color: #000000;
-      line-height:45px;
-    }
-  </style>
 </head>
 
 <body>
@@ -346,11 +17,11 @@
 
       <div class="desktop-menu">
         <a href="home.html">Home</a>
-        <a href="#">Shop</a>
-        <a href="form.html">Feedback</a>
-        <a href="#">Profile</a>
-        <a href="#">Site Map</a>
-        <a href="#">Gallery</a>
+                    <a href="shop.html">Shop</a>
+                    <a href="feedback.html">Feedback</a>
+                    <a href="profile.html">Profile</a>
+                    <a href="sitemap.html">Site Map</a>
+                    <a href="gallery.html">Gallery</a>
       </div>
 
       <button class="hamburger">
@@ -360,11 +31,11 @@
 
     <div class="mobile-menu">
       <a href="home.html">Home</a>
-      <a href="#">Shop</a>
-      <a href="form.html">Feedback</a>
-      <a href="#">Profile</a>
-      <a href="#">Site Map</a>
-      <a href="#">Gallery</a>
+                    <a href="shop.html">Shop</a>
+                    <a href="feedback.html">Feedback</a>
+                    <a href="profile.html">Profile</a>
+                    <a href="sitemap.html">Site Map</a>
+                    <a href="gallery.html">Gallery</a>
     </div>
   </header>
 
@@ -404,7 +75,7 @@
           <h1>Mountain</h1>
           <p>Lorem Ipsum is simply dummy text from the printing and typeseting
             industry</p>
-          <a href="content.html">
+          <a href="content_st2.html">
             <button>Read More</button>
           </a>
         </div>
@@ -479,40 +150,22 @@
   </div>
   <footer>
     <footer class="footer">
-      <div class="waves">
-        <div class="wave" id="wave1"></div>
-        <div class="wave" id="wave2"></div>
-        <div class="wave" id="wave3"></div>
-        <div class="wave" id="wave4"></div>
-      </div>
-      <ul class="social-icon">
-        <li class="social-icon__item"><a class="social-icon__link" href="#">
-            <ion-icon name="logo-facebook"></ion-icon>
-          </a></li>
-        <li class="social-icon__item"><a class="social-icon__link" href="#">
-            <ion-icon name="logo-twitter"></ion-icon>
-          </a></li>
-        <li class="social-icon__item"><a class="social-icon__link" href="#">
-            <ion-icon name="logo-linkedin"></ion-icon>
-          </a></li>
-        <li class="social-icon__item"><a class="social-icon__link" href="#">
-            <ion-icon name="logo-instagram"></ion-icon>
-          </a></li>
-      </ul>
+      
       <ul class="menu">
-        <li class="menu__item"><a class="menu__link" href="#">Home</a></li>
-        <li class="menu__item"><a class="menu__link" href="#">About</a></li>
-        <li class="menu__item"><a class="menu__link" href="#">Services</a></li>
-        <li class="menu__item"><a class="menu__link" href="#">Team</a></li>
-        <li class="menu__item"><a class="menu__link" href="#">Contact</a></li>
-
+        <li class="menu__item"><a class="menu__link" href="home.html">Home</a></li>
+        <li class="menu__item"><a class="menu__link" href="shop.html">Shop</a></li>
+        <li class="menu__item"><a class="menu__link" href="feedback.html">Feedback</a></li>
+        <li class="menu__item"><a class="menu__link" href="profile.html">Profile</a></li>
+        <li class="menu__item"><a class="menu__link" href="sitemap.html">Site Map</a></li>
+        <li class="menu__item"><a class="menu__link" href="gallery.html">Gallery</a></li>
+        <li class="menu__item"><a class="menu__link" href="page_editor_st2.html">Page Editor</a></li>
       </ul>
       <p>&copy;2024 LIFE ON LAND | All Rights Reserved</p>
+      
     </footer>
     <script src="javascript/navbar.js"></script>
     <script type="module"
       src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-    <!-- <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script> -->
   </body>
 
 </html>
