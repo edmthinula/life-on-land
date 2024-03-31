@@ -1,353 +1,13 @@
 <!DOCTYPE html5>
-
 <head>
   <title>Home</title>
-  <link rel="stylesheet" href="style_navbar.css" type="text/css" />
-  <link href="https://fonts.googleapis.com/css?family=Rammetto One" rel="stylesheet" />
-  <link href="https://fonts.googleapis.com/css2?family=Material+Icons" rel="stylesheet" />
-  <link rel="stylesheet" href="style_footer.css" type="text/css"/>
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    div.slides {
-      width: 100%;
-      height: 600;
-      text-align: center;
-      margin: auto;
-      background-image: linear-gradient(rgb(69, 185, 94), rgb(11, 14, 5));
-      margin: 0%;
-      position: relative;
-      z-index: 1;
-      align-items: center;
-    }
-
-    div.middle {
-      margin: auto;
-      margin-top: -1%;
-      width: 100%;
-      height: 60%;
-      background-image: linear-gradient(rgb(0, 0, 0), rgb(162, 98, 38));
-      display: flex;
-      z-index: 1;
-      justify-content: space-around;
-    }
-
-    .card {
-      margin-top: 5%;
-      width: 300px;
-      height: 360px;
-      border-radius: 15px;
-      padding: 1.5rem;
-      background: white;
-      position: relative;
-      display: flex;
-      align-items: flex-end;
-      transition: 0.4s ease-out;
-      box-shadow: 0px 7px 10px rgba(0, 0, 0, 0.5);
-    }
-
-    .card:hover {
-      transform: translateY(20px);
-    }
-
-    .card:hover:before {
-      opacity: 1;
-    }
-
-    .card:hover .info {
-      opacity: 1;
-      transform: translateY(0px);
-    }
-
-    .card:before {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 0;
-      display: block;
-      width: 100%;
-      height: 100%;
-      border-radius: 15px;
-      background: rgba(0, 0, 0, 0.6);
-      z-index: 2;
-      transition: 0.5s;
-      opacity: 0;
-    }
-
-    .card img {
-      width: 100%;
-      height: 100%;
-      -o-object-fit: cover;
-      object-fit: cover;
-      position: absolute;
-      top: 0;
-      left: 0;
-      border-radius: 15px;
-    }
-
-    .card .info {
-      position: relative;
-      z-index: 3;
-      color: white;
-      opacity: 0;
-      transform: translateY(30px);
-      transition: 0.5s;
-    }
-
-    .card .info h1 {
-      margin: 0px;
-    }
-
-    .card .info p {
-      letter-spacing: 1px;
-      font-size: 15px;
-      margin-top: 8px;
-    }
-
-    .card .info button {
-      padding: 0.6rem;
-      outline: none;
-      border: none;
-      border-radius: 3px;
-      background: white;
-      color: black;
-      font-weight: bold;
-      cursor: pointer;
-      transition: 0.4s ease;
-    }
-
-    .card .info button:hover {
-      background: dodgerblue;
-      color: white;
-    }
-
-    body {
-      background-color: #006a4e;
-    }
-
-    .middle_main {
-      position: relative;
-    }
-
-    .top_middle {
-      position: relative;
-      background-color: #428832;
-      width: 50%;
-      height: 5%;
-      margin-top: 2%;
-      left: 25%;
-      z-index: 2;
-      text-align: center;
-      border-radius: 20px;
-    }
-
-    .middle_with_images {
-      /* margin-top: 3%; */
-      position: relative;
-      padding-top: 3%;
-      width: 100%;
-      height: 50%;
-      background-image: linear-gradient(rgb(162, 98, 38), rgb(0, 0, 0));
-      display: flex;
-    }
-
-    .images_side {
-      flex: 1;
-      float: left;
-      width: 40%;
-      height: 70%;
-      background-image: url("image1.jpg");
-      margin-left: 10%;
-      margin-top: 4%;
-      border: 1px solid #ddd;
-      /* Add a border to the image */
-      border-radius: 20px;
-    }
-
-    .text_side {
-      /* display: inline-block;  */
-      flex: 1;
-      vertical-align: top;
-      margin-right: 7;
-      margin-left: 10%;
-      margin-top: 4%;
-      margin-right: 2%;
-      width: 40%;
-      height: 70%;
-    }
-
-    .text_side>p {
-      font-weight: bold;
-      text-align: justify;
-    }
-
-    .text_background_img {
-      position: relative;
-      padding-top: 3%;
-      width: 100%;
-      height: 50%;
-      background-image: url(image2.jpg);
-    }
-
-    .top-text {
-      color: white;
-      /* Text color */
-      position: absolute;
-      /* Absolute positioning within the overlay */
-
-      width: 100%;
-      height: 70%;
-      background-image: linear-gradient(rgb(0, 0, 0), rgba(255, 255, 255, 0));
-      top: 0;
-      left: 0;
-
-    }
-
-    .top-text>p {
-      margin-left: 3%;
-      line-height: 2em;
-      margin-right: 3%;
-    }
-
-    .flip-card {
-      background-color: transparent;
-      height: 80%;
-      width: 20%;
-      margin: auto;
-      border: 1px solid #f1f1f1;
-      perspective: 1000px;
-      /* Remove this if you don't want the 3D effect */
-    }
-
-    /* This container is needed to position the front and back side */
-    .flip-card-inner {
-      position: relative;
-      width: 100%;
-      height: 100%;
-      text-align: center;
-      transition: transform 0.8s;
-      transform-style: preserve-3d;
-    }
-
-    /* Do an horizontal flip when you move the mouse over the flip box container */
-    .flip-card:hover .flip-card-inner {
-      transform: rotateY(180deg);
-    }
-
-    /* Position the front and back side */
-    .flip-card-front,
-    .flip-card-back {
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      -webkit-backface-visibility: hidden;
-      /* Safari */
-      backface-visibility: hidden;
-    }
-
-    /* Style the front side (fallback if image is missing) */
-    .flip-card-front {
-      background-color: #bbb;
-      color: black;
-    }
-
-    /* Style the back side */
-    .flip-card-back {
-      background-color: dodgerblue;
-      color: white;
-      transform: rotateY(180deg);
-    }
-
-    .top_main {
-      height: 700px;
-      display: flex;
-      padding: 0%;
-      background-repeat: no-repeat;
-      background-image: linear-gradient(to right,
-          rgba(145, 255, 0, 0),
-          rgba(28, 143, 6, 0.61));
-      border-radius: 20px;
-    }
-
-    .top_main img {
-      width: 100%;
-      height: 700px;
-      object-fit: cover;
-      position: relative;
-      margin: 0%;
-      padding: 0%;
-      z-index: -1;
-      border-radius: 20px;
-    }
-
-    .top_main .main_text {
-      position: absolute;
-      z-index: 2;
-      right: 3%;
-      top: 20%;
-      color: rgb(255, 255, 255);
-      width: 40%;
-      height: 600px;
-      text-align: left;
-      font-size: 40px;
-      font-weight: bold;
-      font-family: "Rammetto One";
-    }
-
-    .slides_img {
-      width: 100%;
-      height: 600px;
-      object-fit: cover;
-      position: relative;
-      margin: 0%;
-      padding: 0%;
-      z-index: -1;
-      border-radius: 20px;
-    }
-
-    .mission_box {
-      position: absolute;
-      z-index: 2;
-      width: 80%;
-      height: 80%;
-
-      left: 10%;
-      top: 10%;
-      /* margin-top: 4%; */
-      z-index: 2;
-      /* background-color: ; */
-      border: 1px solid rgba(255, 255, 255, .25);
-      border-radius: 20px;
-      background-color: rgba(255, 255, 255, 0.274);
-      box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.25);
-
-      backdrop-filter: blur(15px);
-      /* max-width: 300px; */
-      min-height: 200px;
-    }
-
-    .mission_box h1 {
-      margin-top: 2%;
-      margin-bottom: 2%;
-      font-weight: 1000;
-      font-size: xx-large;
-      color: #267f00;
-
-    }
-
-    .mission_box p {
-      margin-left: 4%;
-      text-align: justify;
-      margin-right: 4%;
-      font-weight: 1000;
-      font-size: x-large;
-      color: #000000;
-    }
-  </style>
+  <link rel="stylesheet" type="text/css" href="css/home.css">
+  <link rel="stylesheet" href="css/style_navbar.css" type="text/css" />
+  <link href="https://fonts.googleapis.com/css?family=Rammetto One"
+    rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Material+Icons"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="css/style_footer.css" type="text/css" />
 </head>
 
 <body>
@@ -355,13 +15,13 @@
     <nav>
       <h1>Life on Land</h1>
 
-      <div class="menu">
-        <a href="#">Home</a>
-        <a href="#">Shop</a>
-        <a href="#">Feedback</a>
-        <a href="#">Profile</a>
-        <a href="#">Site Map</a>
-        <a href="#">Gallery</a>
+      <div class="desktop-menu">
+        <a href="home.html">Home</a>
+                    <a href="shop.html">Shop</a>
+                    <a href="feedback.html">Feedback</a>
+                    <a href="profile.html">Profile</a>
+                    <a href="sitemap.html">Site Map</a>
+                    <a href="gallery.html">Gallery</a>
       </div>
 
       <button class="hamburger">
@@ -370,17 +30,17 @@
     </nav>
 
     <div class="mobile-menu">
-      <a href="#">Home</a>
-      <a href="#">Shop</a>
-      <a href="#">Feedback</a>
-      <a href="#">Profile</a>
-      <a href="#">Site Map</a>
-      <a href="#">Gallery</a>
+      <a href="home.html">Home</a>
+                    <a href="shop.html">Shop</a>
+                    <a href="feedback.html">Feedback</a>
+                    <a href="profile.html">Profile</a>
+                    <a href="sitemap.html">Site Map</a>
+                    <a href="gallery.html">Gallery</a>
     </div>
   </header>
 
   <div class="top_main">
-    <img src="homeback.png" />
+    <img src="images/homeback.png" />
     <div class="main_text">
       <p>
         Protect, restore and promote sustainable use of terrestrial ecosystems
@@ -390,14 +50,16 @@
   </div>
 
   <div class="slides">
-    <img class="slides_img" src="slidesbg.jpg">
+    <img class="slides_img" src="images/slidesbg.jpg">
     <div class="mission_box">
       <h1>
         Our mission
       </h1>
       <p>
-        Our mission is to promote awareness and appreciation of forests, emphasizing their crucial role in environmental
-        protection, biodiversity conservation, and sustainable resource management. Through education and advocacy, we
+        Our mission is to promote awareness and appreciation of forests,
+        emphasizing their crucial role in environmental
+        protection, biodiversity conservation, and sustainable resource
+        management. Through education and advocacy, we
         aim to inspire actions that foster responsible
         forest stewardship for the well-being of current and future generations
       </p>
@@ -408,31 +70,37 @@
       <h1>content pages</h1>
     </div>
     <div class="middle">
-      <div class="card"><img src="card1.jpg" />
+      <div class="card"><img src="images/home-mountain.jpg" />
         <div class="info">
           <h1>Mountain</h1>
-          <p>Lorem Ipsum is simply dummy text from the printing and typeseting industry</p>
-          <button>Read More</button>
+          <p>Lorem Ipsum is simply dummy text from the printing and typeseting
+            industry</p>
+          <a href="content_st2.html">
+            <button>Read More</button>
+          </a>
         </div>
       </div>
-      <div class="card"><img src="card2.jpg" />
+      <div class="card"><img src="images/card2.jpg" />
         <div class="info">
           <h1>Road</h1>
-          <p>Lorem Ipsum is simply dummy text from the printing and typeseting industry</p>
+          <p>Lorem Ipsum is simply dummy text from the printing and typeseting
+            industry</p>
           <button>Read More</button>
         </div>
       </div>
-      <div class="card"><img src="card3.jpg" />
+      <div class="card"><img src="images/card3.jpg" />
         <div class="info">
           <h1>Protester</h1>
-          <p>Lorem Ipsum is simply dummy text from the printing and typeseting industry</p>
+          <p>Lorem Ipsum is simply dummy text from the printing and typeseting
+            industry</p>
           <button>Read More</button>
         </div>
       </div>
-      <div class="card"><img src="card4.jpg" />
+      <div class="card"><img src="images/card4.jpg" />
         <div class="info">
           <h1>Protester</h1>
-          <p>Lorem Ipsum is simply dummy text from the printing and typeseting industry</p>
+          <p>Lorem Ipsum is simply dummy text from the printing and typeseting
+            industry</p>
           <button>Read More</button>
         </div>
       </div>
@@ -440,64 +108,64 @@
     </div>
   </div>
   <div class="middle_with_images">
-    <div class="images_side"></div>
-    <div class="text_side">
-      <p>
-        The Sustainable Development Goal 15 of the 2030 Agenda for Sustainable
-        Development is devoted to “protect, restore and promote sustainable use
-        of terrestrial ecosystems, sustainably manage forests, combat
-        desertification, and halt and reverse land degradation and halt
-        biodiversity loss”.
-      </p>
+    <h1>Biodiversity and ecosystems</h1>
+    <div class="columns">
+      <div class="images_side"></div>
+      <div class="text_side">
+        <p>
+          The UN prioritizes protecting ecosystems and
+          halting biodiversity loss through international
+          agreements. This focusses on sustainable forest
+          management, combating desertification, and restoring
+          degraded land. The Convention on Biological
+          Diversity, adopted in 1992, is a key agreement
+          promoting these goals.
+        </p>
+      </div>
     </div>
   </div>
   <div class="text_background_img">
     <div class="top-text">
+      <h1>Forest</h1>
+      <hr>
       <p>
-        Furthermore, the Future We Want reiterated the importanc e of
-        implementing the Strategic Plan for Biodiversity 2011-2020, and
-        achieving the Aichi Biodiversity Targets adopted at the Tenth Conference
-        of the Parties to the Convention. Biodiversity was discussed by the
-        Commission on sustainable Development on several occasions, and was one
-        of the themes of the 2012/2013 two-year cycle.
+        Sustainable Development Goal 15 aims to protect and 
+        promote the sustainable use of terrestrial ecosystems, 
+        including forests, to mitigate natural disasters and 
+        climate change. Forests are crucial for biodiversity, 
+        livelihoods of billions of people, and ecological 
+        balance. Investments in forests benefit rural
+         communities and require partnerships across
+          sectors. Initiatives like the International 
+          Day of Forests and the International Year of
+           Forests raise awareness about forest conservation.
+            The Rio+20 outcome document stresses sustainable 
+            forest management, while Agenda 21 emphasizes 
+            combating deforestation, strengthening institutions,
+             enhancing conservation efforts, and improving
+              human capabilities for sustainable forest 
+              development.
       </p>
     </div>
   </div>
   <footer>
     <footer class="footer">
-      <div class="waves">
-        <div class="wave" id="wave1"></div>
-        <div class="wave" id="wave2"></div>
-        <div class="wave" id="wave3"></div>
-        <div class="wave" id="wave4"></div>
-      </div>
-      <ul class="social-icon">
-        <li class="social-icon__item"><a class="social-icon__link" href="#">
-            <ion-icon name="logo-facebook"></ion-icon>
-          </a></li>
-        <li class="social-icon__item"><a class="social-icon__link" href="#">
-            <ion-icon name="logo-twitter"></ion-icon>
-          </a></li>
-        <li class="social-icon__item"><a class="social-icon__link" href="#">
-            <ion-icon name="logo-linkedin"></ion-icon>
-          </a></li>
-        <li class="social-icon__item"><a class="social-icon__link" href="#">
-            <ion-icon name="logo-instagram"></ion-icon>
-          </a></li>
-      </ul>
+      
       <ul class="menu">
-        <li class="menu__item"><a class="menu__link" href="#">Home</a></li>
-        <li class="menu__item"><a class="menu__link" href="#">About</a></li>
-        <li class="menu__item"><a class="menu__link" href="#">Services</a></li>
-        <li class="menu__item"><a class="menu__link" href="#">Team</a></li>
-        <li class="menu__item"><a class="menu__link" href="#">Contact</a></li>
-
+        <li class="menu__item"><a class="menu__link" href="home.html">Home</a></li>
+        <li class="menu__item"><a class="menu__link" href="shop.html">Shop</a></li>
+        <li class="menu__item"><a class="menu__link" href="feedback.html">Feedback</a></li>
+        <li class="menu__item"><a class="menu__link" href="profile.html">Profile</a></li>
+        <li class="menu__item"><a class="menu__link" href="sitemap.html">Site Map</a></li>
+        <li class="menu__item"><a class="menu__link" href="gallery.html">Gallery</a></li>
+        <li class="menu__item"><a class="menu__link" href="page_editor_st2.html">Page Editor</a></li>
       </ul>
       <p>&copy;2024 LIFE ON LAND | All Rights Reserved</p>
+      
     </footer>
-    <script src="navbar.js"></script>
-    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-    <!-- <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script> -->
-</body>
+    <script src="javascript/navbar.js"></script>
+    <script type="module"
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  </body>
 
 </html>
