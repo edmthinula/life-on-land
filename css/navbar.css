@@ -43,6 +43,23 @@ nav h1:hover {
   cursor: pointer;
 }
 
+nav p {
+  letter-spacing: 5px;
+  padding: 0.5rem 1rem;
+  padding-right: calc(1rem - 5px);
+  border: 3px solid var(--mainWhite);
+  border-radius: 15px;
+  font-weight: 800;
+  font-size: 18px;
+}
+
+nav p:hover {
+  background-color: var(--mainWhite);
+  color: var(--mainGreen);
+  border-color: var(--subGreen);
+  cursor: pointer;
+}
+
 .desktop-menu {
   display: none;
   align-items: center;
