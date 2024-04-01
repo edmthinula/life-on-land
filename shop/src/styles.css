@@ -1,13 +1,17 @@
+<<<<<<<< HEAD:shop/src/styles.css
 @import url("https://fonts.googleapis.com/css?family=Lato:400,700");
+========
+>>>>>>>> THINULA____J:css/navbar.css
 
 :root {
   --primaryColor: #ffb534;
   --mainWhite: rgb(251, 246, 238);
-  --mainGreen: #65b741;
+  --mainGreen: #27ae60;
   --subGreen: #c1f2b0;
   --mainSpacing: 0.1rem;
   --mainTransition: all 0.3s linear;
 }
+<<<<<<<< HEAD:shop/src/styles.css
 * {
   margin: 0;
   padding: 0;
@@ -19,20 +23,27 @@ body {
   font-family: "Lato", sans-serif;
 }
 /* nav */
+========
+
+>>>>>>>> THINULA____J:css/navbar.css
 nav {
   letter-spacing: var(--mainSpacing);
-  font-family: sans-serif;
+  
+  font-family: "Noto sans", sans-serif;
+  position: fixed;top: 0;left: 0;right: 0;
+  padding: 1rem 7%;
+  max-height: 90px;
 
-  position: sticky;
-  top: 0%;
-  z-index: 99;
+  z-index: 1000;
+
   display: flex;
   justify-content: space-between;
   align-items: center;
+
   background-color: var(--mainGreen);
   color: var(--mainWhite);
-  padding: 1rem 1.5rem;
-  height: 90px;
+  box-shadow: var(--box-shadow);
+
 }
 
 nav h1 {
@@ -48,32 +59,47 @@ nav h1:hover {
   color: var(--mainGreen);
   border-color: var(--subGreen);
   cursor: pointer;
-  transition: var(--mainTransition);
 }
 
-.menu {
+nav p {
+  letter-spacing: 5px;
+  padding: 0.5rem 1rem;
+  padding-right: calc(1rem - 5px);
+  border: 3px solid var(--mainWhite);
+  border-radius: 15px;
+  font-weight: 800;
+  font-size: 18px;
+}
+
+nav p:hover {
+  background-color: var(--mainWhite);
+  color: var(--mainGreen);
+  border-color: var(--subGreen);
+  cursor: pointer;
+}
+
+.desktop-menu {
   display: none;
   align-items: center;
   margin: 0 -1rem;
 }
 
-.menu a {
+.desktop-menu a {
   font-weight: bold;
   margin: 0 1rem;
   padding: 10px;
-  border-radius: 20px;
+  border-radius: 15px;
   color: var(--mainWhite);
   text-decoration: none;
   transition: 0.3s;
 }
 
-.menu a:hover {
+.desktop-menu a:hover {
   background-color: var(--mainWhite);
   color: var(--mainGreen);
   padding: 10px;
-  border-radius: 20px;
+  border-radius: 15px;
   cursor: pointer;
-  transition: var(--mainTransition);
 }
 
 .hamburger {
@@ -86,28 +112,41 @@ nav h1:hover {
   display: block;
   width: 2rem;
   height: 2rem;
+  border-radius: 50%;
 }
 
 .hamburger span {
   color: var(--mainWhite);
   font-size: 2rem;
   padding: 5px;
+  border-radius: 50%;
 }
 
 .hamburger span:hover {
   background-color: var(--mainWhite);
   color: var(--mainGreen);
+  border-radius: 50%;
+  transform: rotate(180deg);
+}
+
+.hamburger span:focus-visible {
+  background-color: var(--mainWhite);
+  color: var(--mainGreen);
+  border-radius: 50%;
 }
 
 .mobile-menu {
+  font-family: "Noto sans", sans-serif;
+
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
-  height: 50%;
-  z-index: 98;
+  /* height: 500px; */
+  z-index: 999;
 
-  padding-top: 6rem;
+  padding-top: 6.625rem;
+  padding-bottom: 1rem;
   opacity: 0;
   transform: translateY(-100%);
   background-color: var(--mainGreen);
@@ -135,7 +174,6 @@ nav h1:hover {
 .mobile-menu a:hover {
   color: var(--mainGreen);
   background-color: var(--mainWhite);
-  transition: var(--mainTransition);
 }
 
 @media (min-width: 1024px) {
@@ -143,11 +181,11 @@ nav h1:hover {
   .hamburger {
     display: none;
   }
-
-  .menu {
+  .desktop-menu {
     display: flex;
   }
 }
+<<<<<<<< HEAD:shop/src/styles.css
 @media (max-height: 850px) {
   .mobile-menu {
     height: 100%;
@@ -207,3 +245,5 @@ nav h1:hover {
 }
 
 /* hero ends */
+========
+>>>>>>>> THINULA____J:css/navbar.css
