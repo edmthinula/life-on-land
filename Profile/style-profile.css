@@ -2,10 +2,10 @@ body {
     font-family: "Open Sans", sans-serif;
     margin: 0;
     padding: 0;
-    height: 120vh;
+    height: auto;
     background-image:
         linear-gradient(to bottom, rgba(255, 255, 255, 0.157), rgba(0, 0, 0, 0), rgb(255, 255, 255)),
-        url(Background.webp);
+        url(Background.png);
     background-repeat: no-repeat;
     background-position: center top, center bottom;
     background-size: cover;
@@ -27,8 +27,9 @@ body {
     text-align: right;
 }
 
-h1 {
+#main-topic{
     text-align: center;
+    margin-top: 120px;
 }
 
 .progress-bar {
@@ -39,6 +40,7 @@ h1 {
     max-width: 500px;
     margin-left: auto;
     margin-right: auto;
+    margin-bottom: 200px;
 }
 
 .progress {
@@ -132,7 +134,7 @@ h1 {
 }
 
 .profile-topic {
-    color: rgb(49, 75, 75);
+    color: rgb(183, 212, 197);
 }
 
 #profilePart-text {

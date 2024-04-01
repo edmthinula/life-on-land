@@ -1,6 +1,6 @@
 body {
     font-family: "Open Sans", sans-serif;
-    margin: 0;
+    margin: auto;
     padding: 0;
     height: 120vh;
     background-image:
@@ -31,7 +31,8 @@ h2 {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 2%;
+    margin-top: 120px;
+    margin-bottom: 500px;
     position: relative;
 }
 
@@ -112,7 +113,7 @@ img {
 }
 
 .TeamPic:hover .TeamBackground {
-    transform: scale(1.15);
+    transform: scale(1.1);
 }
 
 
