@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Feedback Form</title>
+    <link rel="stylesheet" href="css/navbar.css" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Rammetto+One" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Icons"
+      rel="stylesheet">
+    <link rel="stylesheet" href="css/footer.css" type="text/css">
+    <link rel="stylesheet" href="css/feedback.css" type="text/css">
+    <style>
+      
+    </style>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <h1>Life on Land</h1>
+
+        <div class="desktop-menu">
+          <a href="home.html">Home</a>
+          <a href="shop.html">Shop</a>
+          <a href="feedback.html">Feedback</a>
+          <a href="profile.html">Profile</a>
+          <a href="sitemap.html">Site Map</a>
+          <a href="gallery.html">Gallery</a>
+          <a href="team.html">Team</a>
+        </div>
+
+        <button class="hamburger">
+          <span class="material-icons">menu</span>
+        </button>
+      </nav>
+
+      <div class="mobile-menu">
+        <a href="home.html">Home</a>
+        <a href="shop.html">Shop</a>
+        <a href="feedback.html">Feedback</a>
+        <a href="profile.html">Profile</a>
+        <a href="sitemap.html">Site Map</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="team.html">Team</a>
+      </div>
+    </header>
+    <div class="container">
+      <h1>Feedback Form</h1>
+      <form id="feedbackForm" name="feedbackForm">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" class="text_filds" /><br />
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" class="text_filds" /><br />
+        <div class="radio_button_area">
+          <label for="yes">
+            <h3>Was this your first visit?</h3>
+            <input type="radio" id="yes" name="first_time_visit" value="Yes" />
+            Yes
+          </label>
+          <label for="no">
+            <input type="radio" id="no" name="first_time_visit" value="No" />
+            No
+          </label>
+        </div>
+        <div class="radio_button_area">
+          <h3>Was this website informative easy to navigate though first</h3>
+          <label for="yes_ux">
+            <input
+              type="radio"
+              id="yes_ux"
+              name="ux"
+              value="Yes"
+              onclick="disable_text_area()" />
+            Yes
+          </label>
+          <label for="no_ux">
+            <input
+              type="radio"
+              id="no_ux"
+              name="ux"
+              value="No"
+              onclick="enable_text_area()" />
+            No
+          </label>
+        </div>
+        <label for="message">If "NO" suggest any improvment for future</label>
+        <div id="disable_area">
+          <textarea id="message" name="message"
+            class="text_filds"
+            placeholder="Add your message here ..."></textarea>
+        </div>
+        <div class="rating_area">
+          <h3>
+            How satisfied are you with our services? Choose 0 to 10, with 1
+            being "Not satisfied at all!" and 10 being "Extremely satisfied!"
+          </h3>
+          <div class="rate_flex">
+            <span class="rate_radio">
+              <label for="1">1</label>
+              <input type="radio" id="1" name="rate" value="1" />
+            </span>
+            <span class="rate_radio">
+              <label for="2">2</label>
+              <input type="radio" id="2" name="rate" value="2" />
+            </span>
+            <span class="rate_radio">
+              <label for="3">3</label>
+              <input type="radio" id="3" name="rate" value="3" />
+            </span>
+            <span class="rate_radio">
+              <label for="4">4</label>
+              <input type="radio" id="4" name="rate" value="4" />
+            </span>
+            <span class="rate_radio">
+              <label for="5">5</label>
+              <input type="radio" id="5" name="rate" value="5" />
+            </span>
+            <span class="rate_radio">
+              <label for="6">6</label>
+              <input type="radio" id="6" name="rate" value="6" />
+            </span>
+            <span class="rate_radio">
+              <label for="7">7</label>
+              <input type="radio" id="7" name="rate" value="7" />
+            </span>
+            <span class="rate_radio">
+              <label for="8">8</label>
+              <input type="radio" id="8" name="rate" value="8" />
+            </span>
+            <span class="rate_radio">
+              <label for="9">9</label>
+              <input type="radio" id="9" name="rate" value="9" />
+            </span>
+            <span class="rate_radio">
+              <label for="10">10</label>
+              <input type="radio" id="10" name="rate" value="10" />
+            </span>
+          </div>
+        </div>
+        <div class="radio_button_area">
+          <h3>Would you recommend our services?</h3>
+          <label for="yes_like">
+            <input type="radio" id="yes_like" name="like" value="Yes" />
+            Yes
+          </label>
+          <label for="no_like">
+            <input type="radio" id="no_like" name="like" value="No">
+            No
+          </label>
+        </div>
+        <label for="updates">
+          <h3>Would you like to receive updates about new features</h3>
+          <select ID="updates" name="updates" class="updates">
+            <option value="Yes-Email">Yes-Email</option>
+            <option value="No">No</option>
+          </select>
+        </label>
+        <label for="quz">
+          <h3>Do you have any aditional question or request. Please provide
+            details:</h3>
+          <textarea id="quz" name="question" class="text_filds"
+            rows="4" placeholder="Add your message here ..."></textarea>
+        </label>
+        <br /><br />
+        <button type="button" onclick="excute_form(this.form)">
+          Submit
+        </button>
+      </form>
+      <p id="error-message"></p>
+    </div>
+    <footer class="footer">
+
+      <ul class="menu">
+        <li class="menu__item"><a class="menu__link"
+            href="home.html">Home</a></li>
+        <li class="menu__item"><a class="menu__link"
+            href="shop.html">Shop</a></li>
+        <li class="menu__item"><a class="menu__link"
+            href="feedback.html">Feedback</a></li>
+        <li class="menu__item"><a class="menu__link"
+            href="profile.html">Profile</a></li>
+        <li class="menu__item"><a class="menu__link" href="sitemap.html">Site
+            Map</a></li>
+        <li class="menu__item"><a class="menu__link"
+            href="gallery.html">Gallery</a></li>
+        <li class="menu__item"><a class="menu__link"
+            href="page_editor_st2.html">Editor page</a></li>
+            <li class="menu__item"><a class="menu__link" href="team.html">Team</a></li>
+      </ul>
+      <p>&copy;2024 LIFE ON LAND | All Rights Reserved</p>
+
+    </footer>
+    <script src="javascript/navbar.js"></script>
+    <script src="javascript/feedback.js"></script>
+    <script type="module"
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script>
+
+ 
+    </script>
+  </body>
+</html>
