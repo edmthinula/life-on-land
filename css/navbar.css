@@ -157,6 +157,19 @@ nav p:hover {
   color: var(--mainGreen);
   background-color: var(--mainWhite);
 }
+  .active {
+    background: rgba(255, 255, 255, 0.25);
+    box-shadow: 0 0px 32px 0 rgba(238, 255, 0, 0.37);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+  }
+  
+  .mobile-menu .active {
+    border-radius: 0;
+  }
+
 
 @media (min-width: 1024px) {
   .mobile-menu,
@@ -167,3 +180,4 @@ nav p:hover {
     display: flex;
   }
 }
+
