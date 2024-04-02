@@ -13,18 +13,16 @@ const promptsPart2 = [
     { prompt: "Language Preference", display: "Preferred Language", answer: "", skippable: true, type: "Option", optionNum: 3 }
 ]
 const promptsPart3 = [
-    { prompt: "Interest in Environmental Conservation", display: "Interests in Conservation", answer: "", skippable: true, type: "Text" },
-    { prompt: "Experience or Experties in Land Conservation", display: "Experience", answer: "", skippable: true, type: "Text" },
-    { prompt: "Current Involvement in Conservation Initiatives", display: "Current Involvement", answer: "", skippable: true, type: "Text" },
-    { prompt: "Specific Interests within Life on Land", display: "Interests within Life on Land", answer: "", skippable: true, type: "Text" },
-
+    { prompt: "Main Field of Study", display: "Area of Study", answer: "", skippable: true, type: "Text" },
+    { prompt: "Your University or Institution", display: "University/Institution", answer: "", skippable: true, type: "Text" },
+    { prompt: "Completion Year", display: "Year", answer: "", skippable: true, type: "Number" },    
 ]
 const promptsPart4 = [
     { prompt: "Preferred Mods of Engagement", display: "Modes of Engagement", answer: "", skippable: true, type: "Option", optionNum: 4 },
     { prompt: "Frequency of Engagement", display: "Frequency of Engagement", answer: "", skippable: true, type: "Option", optionNum: 5 },
     { prompt: "Notification Preferences", display: "Notification Preferences", answer: "", skippable: true, type: "Option", optionNum: 6 },
     { prompt: "Interest in Participating in Events or Workshops related to Life on Land", display: "Interest in Events/Workshops", answer: "", skippable: true, type: "Option", optionNum: 7 },
-]
+] 
 
 const promptContainer = document.getElementById('prompt-container');
 const progress = document.getElementById('progress');
