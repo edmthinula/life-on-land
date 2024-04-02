@@ -10,6 +10,7 @@ body {
     align-items: center;
     padding: 20px;
     max-width: 800px;
+    margin-top: 150px !important;
     margin: 100px auto;
     background-color: #fff;
     border-radius: 10px;

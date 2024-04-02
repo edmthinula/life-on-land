@@ -8,7 +8,6 @@ body {
     background-repeat: no-repeat;
     background-position: center top, center bottom;
     background-size: cover;
-    backdrop-filter: blur(4px);
 
 }
 
@@ -121,7 +120,6 @@ img {
 
 .TeamPic:hover .DetailsBox {
     display: block;
-
 }
 
 .Buttons img {

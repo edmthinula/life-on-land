@@ -5,12 +5,10 @@ body {
     height: auto;
     background-image:
         linear-gradient(to bottom, rgba(255, 255, 255, 0.157), rgba(0, 0, 0, 0), rgb(255, 255, 255)),
-        url(Background.png);
+        url(Background.jpeg);
     background-repeat: no-repeat;
     background-position: center top, center bottom;
     background-size: cover;
-    backdrop-filter: blur(3px);
-
 }
 
 .profile-container {
