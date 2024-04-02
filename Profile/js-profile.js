@@ -33,7 +33,7 @@ const partDetail = document.getElementById('question-part-details')
 let currentStep = 0;
 let currentPart = 1;
 let step = 0;
-const stepTot = 18;
+const stepTot = 17;
 
 // Function to display prompts
 function displayPrompt() {
