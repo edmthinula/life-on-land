@@ -1,7 +1,6 @@
-<<<<<<<< HEAD:shop/src/styles.css
+
 @import url("https://fonts.googleapis.com/css?family=Lato:400,700");
-========
->>>>>>>> THINULA____J:css/navbar.css
+
 
 :root {
   --primaryColor: #ffb534;
@@ -11,7 +10,7 @@
   --mainSpacing: 0.1rem;
   --mainTransition: all 0.3s linear;
 }
-<<<<<<<< HEAD:shop/src/styles.css
+
 * {
   margin: 0;
   padding: 0;
@@ -23,9 +22,7 @@ body {
   font-family: "Lato", sans-serif;
 }
 /* nav */
-========
 
->>>>>>>> THINULA____J:css/navbar.css
 nav {
   letter-spacing: var(--mainSpacing);
   
@@ -185,7 +182,7 @@ nav p:hover {
     display: flex;
   }
 }
-<<<<<<<< HEAD:shop/src/styles.css
+
 @media (max-height: 850px) {
   .mobile-menu {
     height: 100%;
@@ -245,5 +242,3 @@ nav p:hover {
 }
 
 /* hero ends */
-========
->>>>>>>> THINULA____J:css/navbar.css
