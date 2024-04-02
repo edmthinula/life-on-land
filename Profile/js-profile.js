@@ -15,7 +15,8 @@ const promptsPart2 = [
 const promptsPart3 = [
     { prompt: "Main Field of Study", display: "Area of Study", answer: "", skippable: true, type: "Text" },
     { prompt: "Your University or Institution", display: "University/Institution", answer: "", skippable: true, type: "Text" },
-    { prompt: "Completion Year", display: "Year", answer: "", skippable: true, type: "Number" },    
+    { prompt: "Completion Year", display: "Year", answer: "", skippable: true, type: "Number" },
+    
 ]
 const promptsPart4 = [
     { prompt: "Preferred Mods of Engagement", display: "Modes of Engagement", answer: "", skippable: true, type: "Option", optionNum: 4 },
