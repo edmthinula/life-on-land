@@ -44,7 +44,7 @@ body {
 }
 
 .progress {
-    background-color: #6b746c;
+    background-color: #7cb082;
     height: 20px;
     border-radius: 9px;
     width: 0;
@@ -64,14 +64,14 @@ body {
 }
 
 .Outputs {
-    background-color: rgba(255, 255, 255, 0.206);
+    background-color: rgba(255, 255, 255, 0.4);
     padding: 5%;
     border-radius: 10px;
     margin: 10px;
 }
 
 #prompt-container {
-    background-color: rgba(255, 255, 255, 0.226);
+    background-color: rgba(255, 255, 255, 0.4);
     border-radius: 10px;
     padding: 5%;
     margin: 10px;
@@ -127,14 +127,14 @@ body {
 #question-part-details {
     padding-top: 1px;
     padding-bottom: 1px;
-    background-color: rgba(255, 255, 255, 0.206);
+    background-color: rgba(255, 255, 255, 0.4);
     padding-left: 5%;
     border-radius: 10px;
     margin: 10px;
 }
 
 .profile-topic {
-    color: rgb(183, 212, 197);
+    color: rgb(45, 60, 52);
 }
 
 #profilePart-text {
