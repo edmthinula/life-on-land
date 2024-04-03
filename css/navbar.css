@@ -11,8 +11,11 @@
 nav {
   letter-spacing: var(--mainSpacing);
   
-  font-family: "Noto sans", sans-serif;
-  position: fixed;top: 0;left: 0;right: 0;
+  font-family: "Poppins", sans-serif;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
   padding: 1rem 7%;
   max-height: 90px;
 
@@ -25,40 +28,51 @@ nav {
   background-color: var(--mainGreen);
   color: var(--mainWhite);
   box-shadow: var(--box-shadow);
+  padding: 1rem 7%;
+  height: 90px;
 
 }
-
-nav h1 {
-  letter-spacing: 5px;
-  padding: 0.5rem 1rem;
-  padding-right: calc(1rem - 5px);
-  border: 3px solid var(--mainWhite);
+.site-logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   border-radius: 15px;
+  padding: 0 1rem;
 }
 
-nav h1:hover {
-  background-color: var(--mainWhite);
-  color: var(--mainGreen);
-  border-color: var(--subGreen);
+.logo-white,
+.logo-green {
+  aspect-ratio: 1;
+  height: 3.3rem;
+}
+
+.logo-green {
+  display: none;
+}
+
+.topic {
+  width: 7rem;
+  border-radius: 0 15px 15px 0;
+  padding-left: 0.8rem;
+}
+
+.site-logo:hover {
   cursor: pointer;
-}
-
-nav p {
-  letter-spacing: 5px;
-  padding: 0.5rem 1rem;
-  padding-right: calc(1rem - 5px);
-  border: 3px solid var(--mainWhite);
-  border-radius: 15px;
-  font-weight: 800;
-  font-size: 18px;
-}
-
-nav p:hover {
+  .logo-white {
+    display: none;
+  }
+  .logo-green {
+    display: block;
+  }
   background-color: var(--mainWhite);
-  color: var(--mainGreen);
-  border-color: var(--subGreen);
-  cursor: pointer;
 }
+
+.site-logo:hover {
+  color: #27ae60;
+  background-color: var(--mainWhite);
+  transition: 0s;
+}
+
 
 .desktop-menu {
   display: none;
