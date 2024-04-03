@@ -1,0 +1,117 @@
+*{
+    margin: 0;
+     padding: 0;
+    box-sizing: border-box;
+}
+body{
+
+    background-image: url(../images/editor_bg.jpg);
+    color: antiquewhite;
+    background-repeat: no-repeat;
+    background-size: cover;
+    font-family: monospace;
+}
+.links>h2>a{
+    text-decoration: none;
+    color: antiquewhite;
+    font-size:  16px;
+}
+.links>h2>a:hover{
+    color: black;
+}
+.links{
+    background-color: black;
+    width: 180px;
+    display: flex;
+justify-content: center;
+align-items: center;
+    border-radius: 20px;
+    display: flex;
+    margin: auto;
+}
+.links:hover{
+    background-color: antiquewhite;
+    color: black;
+}
+h2{
+    padding: 2%;
+}
+
+.topic_h2{
+text-decoration: underline;
+}
+h4{
+    padding-bottom: 2%;
+}
+.heading{
+    margin: auto;
+    margin-top: 100px;
+    padding: 2%;
+    text-align: center;
+    background-color: #eefbf31c;
+    color: #ffa200;
+    width: 300px;
+    border-radius: 20px;
+    backdrop-filter: blur(15px);
+    
+}
+hr{
+    margin-top: 2%;
+}
+.student_details{
+    background-color: rgb(143, 111, 4);
+    width: 300px;
+    height: 400px;
+    margin: 2% 1% 2% auto;
+    margin-top: 2%;
+    
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+     align-items: center;
+
+}
+.student_details img {
+    height: auto;
+    width: 260px;
+    height: 300px;
+    border-radius: 20px;
+
+}
+.editor{
+    display: flex;
+    flex-direction: row;
+    margin: 2% 20% 5%  20%;
+    backdrop-filter: blur(15px);
+    
+}
+.columns{
+    margin: 2% auto auto 1%;
+    text-align: center;
+}
+.wrap{
+    background-color: #1d7500;
+    width: 90%;
+    color: #ffcf30;
+    border-radius: 20px;
+    padding: 10px;
+    font-size: large;
+    margin: auto;
+    margin-left: 2%;
+    margin-bottom: 2%;
+
+}
+
+@media only screen and (max-width: 1048px) {
+    .editor{
+        flex-direction: column;
+    }
+    .student_details{
+        margin: 2% auto 2% auto;
+    }
+    .wrap{
+        margin: auto;
+        margin-bottom: 2%;
+    }
+}

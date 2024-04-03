@@ -1,0 +1,163 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.cover {
+    height: 100vh; 
+    background-image: url('cover.jpg'); 
+    background-size: cover; 
+    background-position: center; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white; 
+}
+
+.content {
+    padding: 5%;
+}
+
+.content h1 {
+    font-size: 60px;
+}
+
+.content p {
+    font-size: 30px;
+}
+
+.d-flex {
+    display: flex;
+}
+
+.flex-row {
+    flex-direction: row;
+}
+
+.flex-column {
+    flex-direction: column;
+}
+
+.padding {
+    padding: 1%;
+}
+
+.md-6 {
+    width: 50%;
+}
+
+.md-4 {
+    width: 40%;
+}
+
+.md-8 {
+    width: 60%;
+}
+
+.justify-content-center {
+    justify-content: center;
+}
+
+.alighn-items-center {
+    align-items: center;
+}
+
+.img-icon {
+    border-radius: 50%;
+    height: 50px;
+    width: 50px;
+    margin-right: 5%;
+    margin-left: 10%;
+}
+
+.margin-bottom {
+    margin-bottom: 10%
+}
+
+.margin-topic {
+    margin-bottom: 5%
+}
+
+.card {
+    border-radius: 25px;
+    padding: 4%;
+    margin-left: 1%;
+    margin-right: 1%;
+    box-shadow: 0 4px 8px rgb(223, 236, 223);
+    border: 1px solid  rgb(223, 236, 223);
+}
+
+.topic0 {
+    color: green;
+}
+
+.card-font {
+    font-size: 20px;
+}
+
+.card-img {
+    width: 300px;
+    height: 300px;
+}
+
+.declaration-card {
+    padding: 4%;
+    margin-left: 10%;
+    margin-right: 10%;
+    background-color: rgb(223, 236, 223);
+    color: rgb(0, 63, 0);
+}
+
+p {
+    line-height: 2;
+    font-weight: bold;
+}
+
+.policy-img {
+    width: 400px;
+    height: 400px;
+}
+
+.deforestation-img {
+    width: 300px;
+    height: 300px;
+} 
+
+.stepper {
+    display: flex;
+    margin-top: 20px;
+  }
+  .stepper button {
+    padding: 20px;
+    background-color: rgb(223, 236, 223);
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    padding-left: 4%;
+    padding-right: 4%;
+    font-size: 20px;
+    font-weight: bold;
+  }
+
+  .margin-left {
+    margin-left: 5%;
+  }
+
+  .back-btn {
+    padding-left: 2%;
+    padding-right: 2%;
+    padding-top: 1%;
+    padding-bottom: 1%;
+    border: none;
+    border-radius: 10px;
+    background-color: rgb(223, 236, 223);
+    font-size: 15px;
+    margin-top: 2%;
+    margin-right: 10%;
+  }
+
+  .justify-content-end {
+    justify-content: flex-end;
+  }
+ 
