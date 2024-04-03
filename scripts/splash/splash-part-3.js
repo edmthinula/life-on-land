@@ -33,5 +33,5 @@ setTimeout(() => {
 }, 6000);
 
 setTimeout(() => {
-  window.location.href = "shop.html";
+  window.location.href = "home.html";
 }, 10000);

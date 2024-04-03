@@ -21,6 +21,19 @@ products.forEach((product) => {
 
         <div class="product-spacer"></div>
 
+        <div class="product-quantity">
+            <label for="quantity-${product.id}">Quantity:</label>
+            <select id="quantity-${
+              product.id
+            }" class="quantity-select" data-product-id="${product.id}">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+            </select>
+        </div>
+
         <button class="add-to-cart-button button-primary js-add-to-cart" data-product-id="${
           product.id
         }">
@@ -31,6 +44,31 @@ products.forEach((product) => {
 });
 
 document.querySelector(".js-products-grid").innerHTML = productsHTML;
+
+export function quantityUpdateCart() {
+  let productId = "";
+  let quantity = 0;
+
+  document.querySelectorAll(".quantity-select").forEach((select) => {
+    select.addEventListener("change", (event) => {
+      productId = event.target.dataset.productId;
+      quantity = event.target.value;
+      // updateCartQuantity(productId, quantity);
+    });
+  });
+
+  document.querySelectorAll(".js-add-to-cart").forEach((cartAdd) => {
+    cartAdd.addEventListener("click", () => {
+      console.log(quantity);
+      for (let i = 1; i < quantity; i++) {
+        addToCart(productId);
+      }
+      updateCartQuantity();
+    });
+  });
+}
+
+quantityUpdateCart();
 
 // calculating total quantity
 function updateCartQuantity() {
@@ -51,3 +89,5 @@ document.querySelectorAll(".js-add-to-cart").forEach((button) => {
     updateCartQuantity();
   });
 });
+
+updateCartQuantity();

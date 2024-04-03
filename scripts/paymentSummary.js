@@ -2,6 +2,10 @@ import { cart } from "./cart.js";
 import { getProduct } from "./products.js";
 import { getDeliveryOption } from "./deliveryOptions.js";
 import { formatCurrency } from "./money.js";
+// import { quantityUpdateCart } from "./shop.js";
+
+// const quantity = quantityUpdateCart();
+// console.log(quantity);
 
 export function renderPaymentSummary() {
   let productPriceCents = 0;
@@ -25,7 +29,7 @@ export function renderPaymentSummary() {
         </div>
 
         <div class="payment-summary-row">
-            <div>Items (${cart.length}):</div>
+            <div>Items (${quantity}):</div>
             <div class="payment-summary-money">
                 $${formatCurrency(productPriceCents)}
             </div>
