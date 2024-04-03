@@ -112,8 +112,9 @@ nav p:hover {
   border-color: var(--subGreen);
   cursor: pointer;
 }
-.site-logo:active {
+.site-logo:hover {
   cursor: pointer;
+  background-color: var(--mainWhite);
 
   .logo-white {
     display: none;
@@ -121,8 +122,6 @@ nav p:hover {
   .logo-green {
     display: block;
   }
-
-  background-color: var(--mainWhite);
 }
 
 .site-logo:hover {
