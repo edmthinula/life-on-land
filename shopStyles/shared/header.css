@@ -1,0 +1,129 @@
+@import url(../pages/shop.css);
+
+.header {
+  background-color: rgb(0, 0, 0);
+  color: white;
+  padding: 0 7%;
+
+  display: flex;
+  align-items: center;
+  justify-content: end;
+
+  position: fixed;
+  margin-top: 90px;
+
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 60px;
+  z-index: 996;
+}
+
+.header-link {
+  display: inline-block;
+  padding: 6px;
+  border-radius: 2px;
+  cursor: pointer;
+  text-decoration: none;
+  border: 1px solid rgba(255, 0, 0, 0);
+}
+
+.header-link:hover {
+  border: 1px solid white;
+  transition: all 0.2s linear;
+}
+
+@media (max-width: 575px) {
+}
+
+/* .header-search-section {
+  flex: 1;
+  max-width: 850px;
+  margin-left: 10px;
+  margin-right: 10px;
+  display: flex;
+  align-items: center;
+} */
+
+/* .search-bar {
+  flex: 1;
+  width: 0;
+  font-size: 16px;
+  height: 38px;
+  padding-left: 15px;
+  border: none;
+  border-top-left-radius: 4px;
+  border-bottom-left-radius: 4px;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+} */
+
+/* .search-button {
+  background-color: var(--mainGreen);
+  border: none;
+  width: 45px;
+  height: 40px;
+  border-top-right-radius: 4px;
+  border-bottom-right-radius: 4px;
+  flex-shrink: 0;
+} */
+
+/* .search-icon {
+  height: 22px;
+  margin-left: 2px;
+  margin-top: 3px;
+} */
+
+.header-right-section {
+  width: 180px;
+  flex-shrink: 0;
+  display: flex;
+  justify-content: end;
+}
+
+.orders-link {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-left: 1rem;
+  color: white;
+}
+
+.your-text {
+  text-align: center;
+  display: block;
+  font-size: 13px;
+}
+
+.orders-text {
+  display: block;
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.cart-link {
+  margin-left: auto;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.cart-icon {
+  font-size: 42px;
+}
+
+.cart-quantity {
+  color: var(--mainGreen);
+  font-size: 16px;
+  font-weight: 700;
+
+  position: absolute;
+  /* left: 0;
+  right: 0; */
+  bottom: 9px;
+
+  /* width: 26px; */
+  text-align: center;
+}
