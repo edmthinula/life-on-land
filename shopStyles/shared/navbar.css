@@ -112,7 +112,7 @@ nav p:hover {
   border-color: var(--subGreen);
   cursor: pointer;
 }
-.site-logo:hover {
+.site-logo:active {
   cursor: pointer;
 
   .logo-white {

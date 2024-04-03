@@ -341,6 +341,11 @@
   flex: 1;
 }
 
+.quantity-select,
+.quantity-select select {
+  margin-bottom: 1rem;
+}
+
 .added-to-cart {
   color: rgb(6, 125, 98);
   font-size: 16px;

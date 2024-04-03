@@ -16,13 +16,9 @@ export function renderOrderSummary() {
 
     const matchingProduct = getProduct(productId);
 
-    const selectedProperty = cartItem.selectedProperty;
-
     const deliveryOptionId = cartItem.deliveryOptionId;
 
     const deliveryOption = getDeliveryOption(deliveryOptionId);
-
-    // const selectedProperty = cartItem.selectedProperty;
 
     const today = dayjs();
     const deliveryDate = today.add(deliveryOption.deliveryDays, "days");
@@ -49,14 +45,12 @@ export function renderOrderSummary() {
                       matchingProduct.priceCents
                     )}</div>
                     <div class="product-quantity">
-                      <span> Quantity: 
-                        <span class="quantity-label">${cartItem.quantity}</span>
-                        <div class="product-property">Selected property: ${selectedProperty}</div> 
-                      </span>
+                      <span> Quantity: <span class="quantity-label">${
+                        cartItem.quantity
+                      }</span> </span>
                       <div class="update-delete">
-                        <span class="delete-quantity-link link-primary js-delete-link" data-product-id="${
-                          matchingProduct.id
-                        }">
+                        <span class="delete-quantity-link link-primary js-delete-link" 
+                        data-product-id="${matchingProduct.id}">
                           Delete
                         </span>
                       </div>
