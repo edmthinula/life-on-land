@@ -49,7 +49,7 @@ h2 {
     transition: transform 0.5s ease-in-out;
 }
 
-img {
+.TeamBackground .TeamMember{
     max-width: 100%;
     max-height: 100%;
     display: inline-flex;
@@ -87,6 +87,7 @@ img {
     width: 105%;
     height: 400px;
     z-index: 1;
+    margin-top: -100%;
 }
 
 .DetailsBox {
