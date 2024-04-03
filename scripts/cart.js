@@ -8,7 +8,7 @@ function saveToStorage() {
   localStorage.setItem("cart", JSON.stringify(cart));
 }
 
-export function addToCart(productId, selectedProperty) {
+export function addToCart(productId) {
   let matchingItem;
 
   cart.forEach((cartItem) => {
@@ -23,7 +23,6 @@ export function addToCart(productId, selectedProperty) {
     cart.push({
       productId: productId,
       quantity: 1,
-      selectedProperty: selectedProperty,
       deliveryOptionId: "1",
     });
   }
