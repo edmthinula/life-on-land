@@ -1,5 +1,3 @@
-<<<<<<< Updated upstream
-=======
 @import url("https://fonts.googleapis.com/css?family=Lato:400,700");
 
 :root {
@@ -22,27 +20,21 @@ body {
   font-family: "Lato", sans-serif;
 }
 
->>>>>>> Stashed changes
 @import url(../pages/shop/shop.css);
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap");
 
 /* nav */
 nav {
   letter-spacing: var(--mainSpacing);
-<<<<<<< Updated upstream
-=======
 
->>>>>>> Stashed changes
   font-family: "Poppins", sans-serif;
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
-<<<<<<< Updated upstream
-=======
+
   padding: 1rem 7%;
   max-height: 90px;
->>>>>>> Stashed changes
 
   z-index: 1000;
 
@@ -53,11 +45,9 @@ nav {
   background-color: var(--mainGreen);
   color: var(--mainWhite);
   box-shadow: var(--box-shadow);
-<<<<<<< Updated upstream
+
   padding: 1rem 7%;
   height: 90px;
-=======
->>>>>>> Stashed changes
 }
 .site-logo {
   display: flex;
@@ -86,21 +76,20 @@ nav {
 
 .site-logo:hover {
   cursor: pointer;
-<<<<<<< Updated upstream
-=======
+
   background-color: var(--mainWhite);
   transition: 0s;
   .topic {
     color: #27ae60;
   }
->>>>>>> Stashed changes
+
   .logo-white {
     display: none;
   }
   .logo-green {
     display: block;
   }
-<<<<<<< Updated upstream
+
   background-color: var(--mainWhite);
 }
 
@@ -110,7 +99,6 @@ nav {
   .topic {
     color: #27ae60;
   }
-=======
 }
 
 nav p {
@@ -128,7 +116,6 @@ nav p:hover {
   color: var(--mainGreen);
   border-color: var(--subGreen);
   cursor: pointer;
->>>>>>> Stashed changes
 }
 
 /* .topic:hover {
@@ -246,8 +233,6 @@ nav p:hover {
   }
 }
 
-<<<<<<< Updated upstream
-=======
 @media (max-height: 850px) {
   .mobile-menu {
     height: 100%;
@@ -255,7 +240,6 @@ nav p:hover {
 }
 /* nav end */
 
->>>>>>> Stashed changes
 .active {
   background: rgba(255, 255, 255, 0.25);
   box-shadow: 0 0px 32px 0 rgba(238, 255, 0, 0.37);
@@ -268,8 +252,5 @@ nav p:hover {
 .mobile-menu .active {
   border-radius: 0;
 }
-<<<<<<< Updated upstream
 
 /* nav end */
-=======
->>>>>>> Stashed changes
