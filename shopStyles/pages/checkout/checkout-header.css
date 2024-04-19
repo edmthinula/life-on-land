@@ -4,12 +4,13 @@
   height: 60px;
   padding-left: 30px;
   padding-right: 30px;
-  background-color: white;
+  background-color: var(--white);
 
   display: flex;
   justify-content: center;
+  margin-top: 150px;
 
-  position: fixed;
+  /* position: fixed; */
   top: 150px;
   left: 0;
   right: 0;

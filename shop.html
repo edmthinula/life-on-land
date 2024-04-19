@@ -2,53 +2,51 @@
 <html lang="en">
   <head>
     <title>Shop</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta charset="UTF-8" />
     <link
       rel="shortcut icon"
       href="images/logo-green.png"
       type="image/x-icon"
-    >
+    />
     <!-- icons -->
     <link
       href="https://fonts.googleapis.com/icon?family=Material+Icons"
       rel="stylesheet"
-    >
+    />
     <link
       rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
-    >
+    />
     <link
       rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
-    >
+    />
 
-    <link rel="stylesheet" href="shopStyles/shared/general.css">
-    <link rel="stylesheet" href="shopStyles/shared/navbar.css">
-    <link rel="stylesheet" href="shopStyles/shared/header.css">
-    <link rel="stylesheet" href="shopStyles/shared/style_footer.css">
-    <link rel="stylesheet" href="shopStyles/pages/shop/shop.css">
+    <link rel="stylesheet" href="shopStyles/shared/general.css" />
+    <link rel="stylesheet" href="shopStyles/shared/navbar.css" />
+    <link rel="stylesheet" href="shopStyles/shared/header.css" />
+    <link rel="stylesheet" href="shopStyles/shared/style_footer.css" />
+    <link rel="stylesheet" href="shopStyles/pages/shop/shop.css" />
   </head>
   <body>
     <nav>
       <a href="splash.html">
         <div class="site-logo">
-          <img class="logo-white" src="images/logo.jpg" alt="logo">
-          <img
-            class="logo-green"
-            src="images/logo-green.png"
-            alt="logo">
+          <img class="logo-white" src="images/logo.jpg" alt="logo" />
+          <img class="logo-green" src="images/logo-green.png" alt="logo" />
           <h1 class="topic">Life on Land</h1>
         </div>
       </a>
 
       <div class="desktop-menu">
-        <a href="splash.html">Home</a>
+        <a href="home.html">Home</a>
         <a class="active" href="shop.html">Shop</a>
-        <a href="#">Feedback</a>
-        <a href="#">Profile</a>
-        <a href="#">Site Map</a>
-        <a href="#">Gallery</a>
+        <a href="feedback.html">Feedback</a>
+        <a href="profile.html">Profile</a>
+        <a href="sitemap.html">Site Map</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="team.html">Team</a>
       </div>
 
       <button class="hamburger">
@@ -57,15 +55,15 @@
     </nav>
 
     <div class="mobile-menu">
-      <a href="splash.html">Home</a>
+      <a href="home.html">Home</a>
       <a class="active" href="shop.html">Shop</a>
-      <a href="#">Feedback</a>
-      <a href="#">Profile</a>
-      <a href="#">Site Map</a>
-      <a href="#">Gallery</a>
+      <a href="feedback.html">Feedback</a>
+      <a href="profile.html">Profile</a>
+      <a href="sitemap.html">Site Map</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="team.html">Team</a>
     </div>
 
-    section
     <div class="header">
       <div class="header-right-section">
         <!-- <a class="orders-link header-link" href="orders.html">
@@ -73,7 +71,7 @@
           <span class="orders-text">Orders</span>
         </a> -->
 
-        <a class="cart-link header-link" href="checkout.html">
+        <a class="cart-link header-link" href="cart.html">
           <span class="material-symbols-outlined cart-icon">
             shopping_bag
           </span>
@@ -160,13 +158,18 @@
             <a class="menu__link" href="profile.html">Profile</a>
           </li>
           <li class="menu__item">
-            <a class="menu__link" href="sitemap.html" >Site Map</a>
+            <a class="menu__link" href="sitemap.html">Site Map</a>
           </li>
           <li class="menu__item">
             <a class="menu__link" href="gallery.html">Gallery</a>
           </li>
           <li class="menu__item">
-            <a class="menu__link" target="_blank" href="page_editor_1.html">Page Editor</a>
+            <a class="menu__link" href="page_editor_st1.html" target="_blank"
+              >Page Editor</a
+            >
+          </li>
+          <li class="menu__item">
+            <a class="menu__link" href="team.html">Team</a>
           </li>
         </ul>
         <p>&copy;2024 LIFE ON LAND | All Rights Reserved</p>
@@ -175,6 +178,5 @@
 
     <script src="scripts/navbar.js"></script>
     <script type="module" src="scripts/shop.js"></script>
-    <script type="module" src="scripts/openInNewTab.js"></script>
   </body>
 </html>
