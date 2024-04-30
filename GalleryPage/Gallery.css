@@ -10,6 +10,11 @@ body
     background: linear-gradient(rgb(24, 37, 29) 60% , rgb(21, 26, 20) 40%);
 }
 
+.logo_link{
+    text-decoration-line: none;
+    color: white;
+}
+
 #Topic_gallery_page {
     text-align: center;
     color: #fff;
@@ -181,6 +186,8 @@ select option {
     align-items: center;
     gap:12px;
 }
+
+
 
 
 

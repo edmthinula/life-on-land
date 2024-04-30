@@ -12,6 +12,12 @@ body {
 
 }
 
+.logo_link{
+    text-decoration-line: none;
+    color: white;
+}
+
+
 
 /*  -------------------- Life On Land Logo --------------------  */
 
@@ -188,8 +194,6 @@ a:hover #sub_Line {
 }
 
 /*  ----------------------------------------------------------  */
-
-
 
 
 
