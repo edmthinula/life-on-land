@@ -1,1 +1,1 @@
-View our hosted website from here ---> https://edmthinula.github.io/life-on-land/
+<a href="https://edmthinula.github.io/life-on-land/"><img src="VISIT OUR WEBSITE.gif"></a>
